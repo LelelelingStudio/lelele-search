@@ -1,0 +1,33 @@
+{
+  "id": 3,
+  "title": "原神",
+  "aliases": ["Genshin Impact", "Genshin", "原神游戏", "提瓦特"],
+  "category": "游戏",
+  "tags": ["开放世界", "RPG", "米哈游", "二次元", "跨平台"],
+  "abstract": "《原神》是由米哈游（HoYoverse）开发的一款开放世界动作角色扮演游戏，玩家将扮演\"旅行者\"在名为提瓦特的幻想世界中展开冒险。",
+  "thumb": "",
+  "infobox": {
+    "中文名": "原神",
+    "外文名": "Genshin Impact",
+    "开发者": "米哈游（HoYoverse）",
+    "首发日期": "2020年9月28日",
+    "游戏类型": "开放世界 / 动作RPG",
+    "平台": "PC、iOS、Android、PlayStation 4/5、Switch",
+    "收费模式": "免费游玩（含内购）"
+  },
+  "content": [
+    { "type": "paragraph", "text": "《原神》是一款以\"元素\"为核心机制的开放世界冒险游戏。玩家扮演跨越世界的\"旅行者\"，在七元素交汇的提瓦特大陆上寻找失散的亲人，结识性格各异的同伴，逐步揭开世界的真相。" },
+    { "type": "subtitle", "text": "核心玩法" },
+    { "type": "paragraph", "text": "游戏采用即时战斗系统，玩家可自由切换最多4名角色组成队伍，利用火、水、风、雷、草、冰、岩七种元素之间的反应机制进行战斗。探索方面，玩家可以自由攀爬、游泳、滑翔，几乎没有任何地形限制。" },
+    { "type": "subtitle", "text": "世界观与地区" },
+    { "type": "paragraph", "text": "提瓦特大陆目前开放了蒙德、璃月、稻妻、须弥、枫丹、纳塔等地区，每个地区拥有独特的文化背景、元素属性和统治神明。剧情通过主线任务、角色传说任务和世界任务层层展开。" },
+    { "type": "subtitle", "text": "版本更新" },
+    { "type": "paragraph", "text": "游戏采用约6周一个大版本的更新节奏，每个版本会推出新角色、新武器、新剧情区域和限时活动。持续的内容更新使其长期保持在全球手游收入榜前列。" }
+  ],
+  "source_url": "https://genshin.hoyoverse.com/",
+  "sources": [
+    { "name": "米哈游官方网站", "url": "https://www.mihoyo.com" },
+    { "name": "Genshin Impact 官网", "url": "https://genshin.hoyoverse.com/" }
+  ],
+  "updated": "2026-10-01"
+}
