@@ -1,220 +1,216 @@
 /**
  * 了了了搜 - 词条详情页逻辑
- * 格式：content 数组 + type 字段（paragraph / subtitle / image）
+ * 功能：加载词条 JSON → 渲染标题/infobox/content（paragraph/subtitle/image）
  */
 
 (function () {
   'use strict';
 
   // ===== DOM 引用 =====
-  const artTitle = document.getElementById('artTitle');
-  const artAliases = document.getElementById('artAliases');
-  const artAbstract = document.getElementById('artAbstract');
-  const artSections = document.getElementById('artSections');
-  const artImage = document.getElementById('artImage');
-  const artInfoTable = document.getElementById('artInfoTable');
-  const artSourceLink = document.getElementById('artSourceLink');
-  const backToSearch = document.getElementById('backToSearch');
-  const leleartMain = document.getElementById('leleartMain');
-  const leleartLoading = document.getElementById('leleartLoading');
-  const leleartError = document.getElementById('leleartError');
+  const articleTitle = document.getElementById('articleTitle');
+  const articleMeta = document.getElementById('articleMeta');
+  const infobox = document.getElementById('infobox');
+  const articleBody = document.getElementById('articleBody');
+  const sourceList = document.getElementById('sourceList');
+  const relatedList = document.getElementById('relatedList');
+  const articleLoading = document.getElementById('articleLoading');
+  const articleError = document.getElementById('articleError');
+  const headerSearchInput = document.getElementById('headerSearchInput');
+
+  // ===== 状态 =====
+  let currentId = null;
+  let articleData = null;
 
   // ===== 初始化 =====
   function init() {
     const params = new URLSearchParams(window.location.search);
-    const id = params.get('id');
+    currentId = params.get('id');
 
-    if (!id) {
+    if (!currentId) {
       showError('缺少词条 ID');
       return;
     }
 
-    // 返回搜索按钮
-    const q = params.get('q');
-    if (backToSearch) {
-      if (q) {
-        backToSearch.href = `search.html?q=${encodeURIComponent(q)}`;
-      } else {
-        backToSearch.href = 'search.html';
-      }
+    // 搜索框回车
+    if (headerSearchInput) {
+      headerSearchInput.addEventListener('keydown', (e) => {
+        if (e.key === 'Enter') {
+          const q = headerSearchInput.value.trim();
+          if (q) {
+            window.location.href = `search.html?q=${encodeURIComponent(q)}`;
+          }
+        }
+      });
     }
 
-    loadArticle(id, q);
+    loadArticle();
   }
 
-  // ===== 加载词条 =====
-  async function loadArticle(id, query) {
+  // ===== 加载词条 JSON =====
+  async function loadArticle() {
     showLoading(true);
+    hideError();
 
     try {
-      const res = await fetch(`searchart/artindexa1/art${id}.json`);
-
+      const res = await fetch(`searchart/artindexa1/art${currentId}.json`);
       if (!res.ok) {
-        throw new Error(`词条不存在 (${res.status})`);
+        throw new Error(`词条不存在（ID: ${currentId}）`);
       }
 
-      const data = await res.json();
-      renderArticle(data, query);
+      articleData = await res.json();
+      renderArticle();
 
     } catch (err) {
-      showError(`词条加载失败：${err.message}`);
+      showError(err.message);
     } finally {
       showLoading(false);
     }
   }
 
   // ===== 渲染词条 =====
-  function renderArticle(data, query) {
-    if (!data) return;
+  function renderArticle() {
+    if (!articleData) return;
 
-    // 页面标题
-    document.title = `${data.title || '词条'} - 了了了搜`;
-
-    // 标题
-    if (artTitle) {
-      artTitle.textContent = data.title || '无标题';
+    // ---- 标题 ----
+    if (articleTitle) {
+      articleTitle.textContent = articleData.title || '无标题';
+      document.title = `${articleData.title} - 了了了搜`;
     }
 
-    // 别名
-    if (artAliases) {
-      if (data.aliases && data.aliases.length > 0) {
-        artAliases.textContent = `别名：${data.aliases.join('、')}`;
-      } else {
-        artAliases.textContent = '';
+    // ---- 顶部元信息（aliases + category + tags）----
+    if (articleMeta) {
+      let metaHtml = '';
+
+      if (articleData.category) {
+        metaHtml += `<span class="meta-category">${escapeHtml(articleData.category)}</span>`;
       }
-    }
 
-    // 摘要
-    if (artAbstract) {
-      if (data.abstract) {
-        artAbstract.innerHTML = `<p>${escapeHtml(data.abstract)}</p>`;
-      } else {
-        artAbstract.style.display = 'none';
+      if (articleData.tags && articleData.tags.length > 0) {
+        metaHtml += articleData.tags.map(t => `<span class="meta-tag">${escapeHtml(t)}</span>`).join('');
       }
-    }
 
-    // 信息栏 - 图片
-    if (artImage) {
-      if (data.thumb) {
-        artImage.innerHTML = `<img src="${escapeHtml(data.thumb)}" alt="${escapeHtml(data.title)}" loading="lazy" onerror="this.parentElement.style.display='none'">`;
-      } else {
-        artImage.style.display = 'none';
+      if (articleData.aliases && articleData.aliases.length > 0) {
+        metaHtml += `<span class="meta-aliases">别名：${articleData.aliases.map(a => escapeHtml(a)).join('、')}</span>`;
       }
+
+      articleMeta.innerHTML = metaHtml;
     }
 
-    // 信息栏 - 表格
-    if (artInfoTable) {
-      const infobox = data.infobox;
-      if (infobox && Object.keys(infobox).length > 0) {
-        artInfoTable.innerHTML = Object.entries(infobox).map(([key, value]) => `
-          <tr>
-            <th>${escapeHtml(key)}</th>
-            <td>${escapeHtml(value)}</td>
-          </tr>
-        `).join('');
-      } else {
-        if (data.category) {
-          artInfoTable.innerHTML = `
-            <tr><th>分类</th><td>${escapeHtml(data.category)}</td></tr>
-            ${data.tags ? `<tr><th>标签</th><td>${data.tags.map(t => escapeHtml(t)).join('、')}</td></tr>` : ''}
-            ${data.updated ? `<tr><th>更新</th><td>${escapeHtml(data.updated)}</td></tr>` : ''}
-          `;
-        } else {
-          artInfoTable.parentElement.style.display = 'none';
+    // ---- Infobox ----
+    if (infobox) {
+      if (articleData.infobox && Object.keys(articleData.infobox).length > 0) {
+        let ibHtml = '<table class="infobox-table"><tbody>';
+        ibHtml += '<tr><th colspan="2" class="infobox-header">概览</th></tr>';
+        for (const [key, value] of Object.entries(articleData.infobox)) {
+          ibHtml += `<tr><td class="infobox-key">${escapeHtml(key)}</td><td class="infobox-value">${escapeHtml(value)}</td></tr>`;
         }
+        ibHtml += '</tbody></table>';
+        infobox.innerHTML = ibHtml;
+        infobox.classList.remove('hidden');
+      } else {
+        infobox.classList.add('hidden');
       }
     }
 
-    // ===== 正文渲染（content 数组 + type 字段）=====
-    if (artSections) {
-      if (data.content && Array.isArray(data.content) && data.content.length > 0) {
-        let html = '';
-        data.content.forEach(item => {
-          if (!item || !item.type) return;
-
+    // ---- 正文内容（content 数组，按 type 渲染）----
+    if (articleBody) {
+      if (articleData.content && articleData.content.length > 0) {
+        articleBody.innerHTML = articleData.content.map(item => {
           switch (item.type) {
             case 'paragraph':
-              if (item.text) {
-                html += `<p>${escapeHtml(item.text)}</p>`;
-              }
-              break;
+              return `<p>${escapeHtml(item.text || '')}</p>`;
 
             case 'subtitle':
-              if (item.text) {
-                html += `<h3 class="leleart-subtitle">${escapeHtml(item.text)}</h3>`;
-              }
-              break;
+              return `<h3 class="article-subtitle">${escapeHtml(item.text || '')}</h3>`;
 
             case 'image':
-              if (item.src) {
-                html += `<figure class="leleart-figure">
-                  <img src="${escapeHtml(item.src)}" alt="${escapeHtml(item.caption || item.text || data.title)}" loading="lazy" onerror="this.parentElement.style.display='none'">
-                  ${item.caption ? `<figcaption>${escapeHtml(item.caption)}</figcaption>` : ''}
-                </figure>`;
-              }
-              break;
-
-            case 'heading':
-              if (item.text) {
-                html += `<h2 class="leleart-heading">${escapeHtml(item.text)}</h2>`;
-              }
-              break;
-
-            case 'list':
-              if (item.items && Array.isArray(item.items)) {
-                html += `<ul class="leleart-list">${item.items.map(li => `<li>${escapeHtml(li)}</li>`).join('')}</ul>`;
-              }
-              break;
-
-            case 'link':
-              if (item.url && item.text) {
-                html += `<p><a href="${escapeHtml(item.url)}" target="_blank" rel="noopener" class="leleart-link">${escapeHtml(item.text)}</a></p>`;
-              }
-              break;
+              return `<figure class="article-figure">
+                <img src="${escapeHtml(item.src || item.url || '')}" alt="${escapeHtml(item.caption || item.alt || '')}" loading="lazy" onerror="this.parentElement.style.display='none'">
+                ${item.caption ? `<figcaption>${escapeHtml(item.caption)}</figcaption>` : ''}
+              </figure>`;
 
             default:
-              // 未知类型，尝试当纯文本处理
-              if (item.text) {
-                html += `<p>${escapeHtml(item.text)}</p>`;
-              }
+              // 未知类型，尝试当纯文本渲染
+              return `<p>${escapeHtml(item.text || JSON.stringify(item))}</p>`;
           }
-        });
-
-        artSections.innerHTML = html;
+        }).join('');
+      } else if (articleData.abstract) {
+        // 没有 content 但有 abstract，兜底显示摘要
+        articleBody.innerHTML = `<p class="article-abstract-fallback">${escapeHtml(articleData.abstract)}</p>`;
       } else {
-        artSections.innerHTML = '';
+        articleBody.innerHTML = '<p class="article-empty">暂无详细内容</p>';
       }
     }
 
-    // 来源链接
-    if (artSourceLink) {
-      if (data.source_url) {
-        artSourceLink.href = data.source_url;
-        artSourceLink.textContent = `访问原始来源 →`;
-      } else if (data.official_url) {
-        artSourceLink.href = data.official_url;
-        artSourceLink.textContent = `访问官方网站 →`;
+    // ---- 来源链接 ----
+    if (sourceList) {
+      if (articleData.sources && articleData.sources.length > 0) {
+        sourceList.innerHTML = articleData.sources.map(s => `
+          <li><a href="${escapeHtml(s.url)}" target="_blank" rel="noopener">${escapeHtml(s.name || s.url)}</a></li>
+        `).join('');
+        sourceList.parentElement.classList.remove('hidden');
+      } else if (articleData.source_url) {
+        sourceList.innerHTML = `<li><a href="${escapeHtml(articleData.source_url)}" target="_blank" rel="noopener">${escapeHtml(articleData.source_url)}</a></li>`;
+        sourceList.parentElement.classList.remove('hidden');
       } else {
-        artSourceLink.parentElement.style.display = 'none';
+        sourceList.parentElement.classList.add('hidden');
       }
     }
 
-    // 显示内容
-    leleartMain.classList.remove('hidden');
+    // ---- 相关词条（从索引匹配同 category）----
+    if (relatedList) {
+      loadRelated();
+    }
+  }
+
+  // ===== 加载相关词条 =====
+  async function loadRelated() {
+    if (!articleData || !articleData.category) {
+      relatedList.parentElement.classList.add('hidden');
+      return;
+    }
+
+    try {
+      const res = await fetch('searchart/artindexa1.json');
+      if (!res.ok) return;
+      const indexData = await res.json();
+
+      const related = (indexData.items || [])
+        .filter(item => item.id != currentId && item.category === articleData.category)
+        .slice(0, 5);
+
+      if (related.length > 0) {
+        relatedList.innerHTML = related.map(item => `
+          <li><a href="leleart.html?id=${item.id}">${escapeHtml(item.title)}</a></li>
+        `).join('');
+        relatedList.parentElement.classList.remove('hidden');
+      } else {
+        relatedList.parentElement.classList.add('hidden');
+      }
+    } catch (e) {
+      relatedList.parentElement.classList.add('hidden');
+    }
   }
 
   // ===== 工具函数 =====
   function showLoading(show) {
-    if (show) {
-      leleartLoading.classList.remove('hidden');
-    } else {
-      leleartLoading.classList.add('hidden');
+    if (articleLoading) {
+      if (show) articleLoading.classList.remove('hidden');
+      else articleLoading.classList.add('hidden');
     }
   }
 
   function showError(msg) {
-    leleartError.classList.remove('hidden');
-    leleartError.textContent = msg;
+    if (articleError) {
+      articleError.classList.remove('hidden');
+      articleError.textContent = msg;
+    }
+  }
+
+  function hideError() {
+    if (articleError) {
+      articleError.classList.add('hidden');
+    }
   }
 
   function escapeHtml(text) {
