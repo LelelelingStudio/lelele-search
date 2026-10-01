@@ -1,0 +1,40 @@
+{
+  "id": 21,
+  "title": "Redis",
+  "aliases": ["Redis", "REmote DIctionary Server", "内存数据库", "缓存"],
+  "category": "开发工具",
+  "tags": ["内存数据库", "缓存", "NoSQL", "键值存储", "消息队列", "高性能"],
+  "abstract": "Redis 是开源的内存数据结构存储系统，可用作数据库、缓存和消息中间件，以极高的性能和丰富的数据类型著称，是互联网架构中不可或缺的组件。",
+  "thumb": "",
+  "infobox": {
+    "软件名称": "Redis",
+    "开发者": "Salvatore Sanfilippo（antirez）",
+    "首次发布": "2009年",
+    "编程语言": "C",
+    "开源协议": "BSD",
+    "数据结构": "字符串、列表、集合、有序集合、哈希、流、地理空间、位图",
+    "名称含义": "REmote DIctionary Server"
+  },
+  "content": [
+    { "type": "paragraph", "text": "Redis 是开源的内存数据结构存储系统，由 Salvatore Sanfilippo（网名 antirez）于 2009 年开发。它可用作数据库、缓存和消息中间件，以极高的性能和丰富的数据类型著称。Redis 在内存中存储数据，因此读写速度极快（通常每秒可处理数十万次操作），是互联网高并发架构中不可或缺的组件。" },
+    { "type": "subtitle", "text": "诞生背景" },
+    { "type": "paragraph", "text": "Redis 的诞生源于实际需求。2008 年，Salvatore Sanfilippo 在为意大利初创公司 Merzia 开发实时网页日志分析工具 LLOOGG 时，需要一种高性能的数据结构服务器来替代传统的数据库。他发现市面上的方案要么太慢，要么功能不够灵活，于是决定自己写一个。2009 年，Redis 首次发布并迅速在 Hacker News 上引发关注，凭借简洁的设计和惊人的性能成为技术圈的宠儿。" },
+    { "type": "subtitle", "text": "丰富的数据类型" },
+    { "type": "paragraph", "text": "Redis 不同于普通的键值存储，它支持多种数据结构。字符串（String）是最基本类型，可存储文本、数字甚至二进制数据，支持原子自增/自减；列表（List）是双向链表，适合实现队列和栈；集合（Set）是无序唯一元素集合，支持交集、并集、差集运算；有序集合（Sorted Set / ZSet）为每个元素关联分数，可按分数排序，是排行榜的理想实现；哈希（Hash）适合存储对象；此外还有位图（Bitmap）、HyperLogLog（基数统计）、地理空间索引（GEO）、流（Stream，用于消息队列）等高级类型。" },
+    { "type": "subtitle", "text": "核心特性" },
+    { "type": "paragraph", "text": "Redis 的核心特性包括：单线程模型——所有命令在单线程中执行，避免了锁竞争，保证了原子性；持久化——支持 RDB（定期快照）和 AOF（追加日志）两种持久化方式，可将内存数据保存到磁盘；过期机制——支持为键设置 TTL（生存时间），自动清理过期数据；发布订阅——内置 Pub/Sub 机制，支持消息广播；Lua 脚本——允许在服务器端执行原子性的复杂操作。这些特性使 Redis 的应用场景远超普通缓存。" },
+    { "type": "subtitle", "text": "典型应用场景" },
+    { "type": "paragraph", "text": "Redis 在互联网架构中有大量典型应用。缓存（Cache）是最常见的场景——将数据库查询结果缓存到 Redis，大幅降低数据库压力；会话存储（Session Store）——在分布式系统中集中存储用户会话；排行榜——利用 ZSet 实现实时排名；分布式锁——通过 SETNX 实现跨进程的互斥锁；限流器——利用计数器和过期时间实现 API 限流；消息队列——利用 List 或 Stream 实现异步任务处理。几乎所有大型互联网公司的技术栈中都离不开 Redis。" },
+    { "type": "subtitle", "text": "高可用与集群" },
+    { "type": "paragraph", "text": "为保证生产环境的可靠性，Redis 提供了多种高可用方案。主从复制（Replication）允许数据从主节点异步复制到多个从节点，实现读写分离；哨兵（Sentinel）自动监控主从节点，在主节点故障时自动完成故障转移；Redis Cluster 则是原生的分片方案，将数据分布到多个节点，支持水平扩展，理论上可扩展到 1000 个节点。这些机制使 Redis 能够满足从中小项目到超大规模系统的不同需求。" },
+    { "type": "subtitle", "text": "商业发展与生态" },
+    { "type": "paragraph", "text": "Redis 的商业化路径也颇为成功。2011 年 Salvatore Sanfilippo 加入 VMware，随后 Redis 项目由 Redis Labs（现更名为 Redis Ltd.）公司维护。Redis Enterprise 是官方推出的商业版本，提供多租户、Active-Active 地理分布式复制、自动分层存储（将冷数据下沉到闪存）等高级功能。2021 年 Redis 完成 3.5 亿美元融资，估值超过 20 亿美元。值得一提的是，2024 年 Redis 修改了许可证条款，从 BSD 转向 RSALv2 和 SSPLv2 双许可证，引发社区对开源定义的讨论，也催生了 Valkey（Linux 基金会托管的 Redis 分支）等替代项目。" }
+  ],
+  "source_url": "https://redis.io",
+  "sources": [
+    { "name": "Redis 官网", "url": "https://redis.io" },
+    { "name": "Redis 命令参考", "url": "https://redis.io/commands" },
+    { "name": "Valkey（Redis 分支）", "url": "https://valkey.io" }
+  ],
+  "updated": "2026-10-01"
+}

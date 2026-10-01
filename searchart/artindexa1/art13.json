@@ -1,0 +1,37 @@
+{
+  "id": 13,
+  "title": "Tableau",
+  "aliases": ["Tableau", "Tableau Software", "数据可视化"],
+  "category": "数据",
+  "tags": ["数据可视化", "商业智能", "BI", "仪表板", "Salesforce", "数据分析"],
+  "abstract": "Tableau 是全球领先的数据可视化与商业智能平台，无需编程即可将原始数据转化为交互式图表和仪表板，被 Salesforce 收购后成为其分析产品矩阵的核心。",
+  "thumb": "",
+  "infobox": {
+    "软件名称": "Tableau",
+    "开发商": "Tableau Software",
+    "首次发布": "2003年",
+    "创始人": "Christian Chabot、Pat Hanrahan、Chris Stolte",
+    "平台": "Windows、macOS、Web、移动端",
+    "所属公司": "Salesforce（2019年收购）",
+    "收购金额": "157 亿美元"
+  },
+  "content": [
+    { "type": "paragraph", "text": "Tableau 是一款专注于数据可视化和商业智能（BI）的平台，由 Christian Chabot、Pat Hanrahan 和 Chris Stolte 于 2003 年创立。它的核心使命是让任何人都能通过拖拽操作，将原始数据转化为美观、交互式的可视化图表，而无需编写任何代码或 SQL 查询。这一理念大幅降低了数据分析的门槛，使\"人人皆可分析\"成为可能。" },
+    { "type": "subtitle", "text": "技术起源" },
+    { "type": "paragraph", "text": "Tableau 的技术源自斯坦福大学计算机科学系的研究项目\"Polaris\"。Chris Stolte 和 Pat Hanrahan（后成为 NVIDIA 首席科学家）在斯坦福期间开发了基于可视化查询语言的数据库交互技术，这项研究的成果最终演化为 Tableau 的核心引擎——VizQL。VizQL 能够将用户的拖拽操作自动转换为数据库查询，并渲染为可视化图形，这是 Tableau 易用性的根本所在。" },
+    { "type": "subtitle", "text": "产品家族" },
+    { "type": "paragraph", "text": "Tableau 拥有完整的产品家族。Tableau Desktop 是核心桌面应用，用于连接数据源、创建可视化和仪表板；Tableau Prep 负责数据清洗和预处理；Tableau Server 和 Tableau Online（云端版）用于部署和共享内容；Tableau Public 是免费的公开分享版本，任何人都可以发布可视化作品到公共画廊；Tableau Reader 则用于查看本地打包的工作簿。各产品协同覆盖了从数据准备到发布共享的全流程。" },
+    { "type": "subtitle", "text": "核心特性" },
+    { "type": "paragraph", "text": "Tableau 的核心特性包括：强大的数据连接能力，支持数百种数据源，从 Excel、CSV 到 SQL Server、Snowflake、Amazon Redshift 等数据仓库；智能推荐，能够根据数据字段类型自动推荐合适的图表类型；交互式仪表板，支持筛选器、参数控件和高亮联动，用户点击某个图表元素时其他图表会自动联动更新；计算字段，允许用户创建自定义指标和复杂的逻辑运算。" },
+    { "type": "subtitle", "text": "收购与竞争格局" },
+    { "type": "paragraph", "text": "2019 年，Salesforce 以 157 亿美元收购 Tableau，这是 Salesforce 历史上最大的一笔收购。此举使 Salesforce 获得了强大的数据分析和可视化能力，与 Einstein Analytics 整合后形成了完整的 CRM 分析闭环。在商业智能市场，Tableau 面临微软 Power BI 的强力竞争——Power BI 凭借 Office 365 的捆绑优势在中小企业市场占据领先，而 Tableau 则在高级分析能力和可视化深度上保持优势。" },
+    { "type": "subtitle", "text": "社区与影响力" },
+    { "type": "paragraph", "text": "Tableau 拥有活跃的用户社区，每年在全球多个城市举办 Tableau Conference（TC），吸引数万名数据从业者参与。Tableau Public 画廊上汇集了数十万个公开可视化作品，涵盖体育、政治、环境、流行文化等主题，成为数据叙事的重要平台。Tableau 基金会（Tableau Foundation）还致力于用数据驱动社会公益，支持全球范围内的非营利组织和人道主义项目。" }
+  ],
+  "source_url": "https://www.tableau.com",
+  "sources": [
+    { "name": "Tableau 官网", "url": "https://www.tableau.com" },
+    { "name": "Tableau Public 画廊", "url": "https://public.tableau.com" }
+  ],
+  "updated": "2026-10-01"
+}

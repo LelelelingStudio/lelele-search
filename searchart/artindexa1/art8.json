@@ -1,0 +1,37 @@
+{
+  "id": 8,
+  "title": "Slack",
+  "aliases": ["Slack", "Slack Technologies", "协作工具"],
+  "category": "开发工具",
+  "tags": ["企业协作", "即时通讯", "Salesforce", "频道", "第三方集成"],
+  "abstract": "Slack 是企业级实时协作平台，以频道（Channel）组织讨论，集成消息、文件共享和数千款第三方应用，帮助团队告别低效邮件，实现高效沟通。",
+  "thumb": "https://a.slack-edge.com/80588/marketing/img/meta/og/slack_og_2023.png",
+  "infobox": {
+    "软件名称": "Slack",
+    "开发商": "Slack Technologies",
+    "成立时间": "2009年（2013年正式推出）",
+    "创始人": "Stewart Butterfield",
+    "平台": "Windows、macOS、iOS、Android、Web",
+    "所属公司": "Salesforce（2021年收购）",
+    "收购金额": "277 亿美元"
+  },
+  "content": [
+    { "type": "paragraph", "text": "Slack 是一款企业级即时通讯与团队协作工具，于 2013 年由 Stewart Butterfield 正式推出。它的名字是\"Searchable Log of All Conversation and Knowledge\"（所有对话和知识的可搜索日志）的缩写。Slack 的核心创新在于用频道（Channel）替代传统邮件，让团队沟通变得结构化、可检索、可整合。" },
+    { "type": "subtitle", "text": "诞生故事" },
+    { "type": "paragraph", "text": "Slack 的诞生颇具传奇色彩——它原本是一个失败项目的\"副产品\"。2012 年，Stewart Butterfield 团队在开发一款名为 Glitch 的多人在线游戏时，内部使用了一套自建的 IRC 式通讯工具。游戏项目最终失败，但团队发现这套通讯工具极具价值，于是决定将其独立出来，这就是 Slack 的雏形。这种\"失败中孕育成功\"的故事在硅谷屡见不鲜，Slack 却将其演绎得尤为精彩。" },
+    { "type": "subtitle", "text": "核心功能" },
+    { "type": "paragraph", "text": "Slack 的功能围绕几个核心概念展开。频道（Channel）是围绕特定项目、主题或部门创建的公开或私密讨论空间；直接消息（DM）用于一对一或小组私下沟通；线程（Thread）允许在频道内针对某条消息展开分支讨论而不干扰主对话流；表情回应（Emoji Reaction）提供了轻量级的反馈方式。此外，Slack 内置文件共享、语音和视频通话、屏幕共享等功能，几乎覆盖了团队日常沟通的全部场景。" },
+    { "type": "subtitle", "text": "第三方集成生态" },
+    { "type": "paragraph", "text": "Slack 最强大的竞争力来自其开放的集成生态。通过 Slack App Directory，用户可以接入超过 2400 款第三方应用，包括 Google Drive、Jira、GitHub、Salesforce、Zoom、Asana 等主流工具。借助 Incoming Webhook 和 Slack API，开发者可以自定义通知和工作流。Slack 的\"工作流构建器\"（Workflow Builder）甚至允许非技术人员通过可视化界面创建自动化流程，如自动收集表单数据、触发审批等。" },
+    { "type": "subtitle", "text": "收购与商业发展" },
+    { "type": "paragraph", "text": "Slack 于 2019 年在纽约证券交易所直接上市（股票代码 WORK），首日市值超过 190 亿美元。2020 年，在企业协作工具因疫情迎来爆发式增长的背景下，Salesforce 宣布以 277 亿美元收购 Slack，并于 2021 年 7 月完成交易。这笔交易成为企业软件领域最大的收购案之一，Slack 成为 Salesforce \"Customer 360\" 战略的核心协作层。" },
+    { "type": "subtitle", "text": "市场竞争" },
+    { "type": "paragraph", "text": "Slack 面临的最大竞争对手是微软 Teams。微软凭借 Office 365 的捆绑优势，在企业市场占有率上后来居上。此外，Discord、Mattermost、Rocket.Chat 等工具也在不同细分市场与 Slack 竞争。尽管如此，Slack 凭借其极致的开发者体验和活跃的集成生态，在科技公司和初创企业中仍保持着强大的用户忠诚度。" }
+  ],
+  "source_url": "https://slack.com",
+  "sources": [
+    { "name": "Slack 官网", "url": "https://slack.com" },
+    { "name": "Salesforce 官方公告", "url": "https://www.salesforce.com/company/news-press/press-releases/2020/12/" }
+  ],
+  "updated": "2026-10-01"
+}

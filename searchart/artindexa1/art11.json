@@ -1,0 +1,37 @@
+{
+  "id": 11,
+  "title": "Postman",
+  "aliases": ["Postman", "API测试", "API协作平台"],
+  "category": "开发工具",
+  "tags": ["API", "调试", "测试", "自动化", "协作", "Mock Server"],
+  "abstract": "Postman 是世界领先的 API 协作平台，覆盖 API 生命周期的设计、测试、模拟与文档生成，全球注册用户超过 4000 万。",
+  "thumb": "https://www.postman.com/assets/logos/postman-logo-horizontal-white-bg.svg",
+  "infobox": {
+    "软件名称": "Postman",
+    "开发商": "Postman Inc.",
+    "首次发布": "2012年（Chrome 插件）",
+    "创始人": "Abhinav Asthana",
+    "平台": "Web、Windows、macOS、Linux",
+    "注册用户": "超过 4000 万",
+    "估值": "56 亿美元（2021年）"
+  },
+  "content": [
+    { "type": "paragraph", "text": "Postman 最初由 Abhinav Asthana 作为 Chrome 浏览器的 API 调试插件发布，2014 年成立公司独立运营。如今，Postman 已发展为完整的 API 协作平台，覆盖 API 生命周期的设计、测试、模拟、文档和监控。它是全球开发者测试 HTTP API 的首选工具，几乎没有前端或后端工程师没用过 Postman。" },
+    { "type": "subtitle", "text": "核心功能" },
+    { "type": "paragraph", "text": "Postman 的核心是一个强大的 HTTP 客户端，支持 GET、POST、PUT、DELETE、PATCH 等全部 HTTP 方法，以及 REST、GraphQL、WebSocket 和 gRPC 协议。用户可以方便地设置请求头、查询参数、请求体（支持 JSON、XML、表单等多种格式）、认证方式（Basic、Bearer Token、OAuth 2.0 等），并查看完整的响应数据、状态码、响应时间和响应头信息。" },
+    { "type": "subtitle", "text": "集合与工作区" },
+    { "type": "paragraph", "text": "Postman 通过\"集合\"（Collection）组织 API 请求，用户可以将相关的一组请求组织成树形结构，并为每个请求添加描述和示例。集合可以导出分享，也可以发布为公开的 API 文档。\"工作区\"（Workspace）则是团队协作的核心概念，支持个人、团队和公开工作区，成员可以在同一空间内共享集合、环境变量和 Mock Server，实现 API 开发的全流程协作。" },
+    { "type": "subtitle", "text": "自动化测试" },
+    { "type": "paragraph", "text": "Postman 提供了完善的自动化测试能力。用户可以使用 JavaScript 编写测试脚本，在请求发送前后执行断言，验证响应状态码、响应体字段、响应时间等指标。集合运行器（Collection Runner）可以按顺序批量执行一组请求，Newman 命令行工具则允许将集合测试集成到 CI/CD 流水线中，实现 API 的持续集成测试。" },
+    { "type": "subtitle", "text": "Postman API Network" },
+    { "type": "paragraph", "text": "Postman API Network 是平台的一大特色，汇集了全球数万个公开 API 集合，涵盖 Salesforce、Stripe、GitHub、Twitter 等主流服务。开发者可以直接 Fork 这些集合到自己的工作区，快速上手第三方 API 的调用。这一生态使 Postman 不仅是一个工具，更成为 API 知识的集散地。" },
+    { "type": "subtitle", "text": "商业发展" },
+    { "type": "paragraph", "text": "Postman 的商业化路径相当成功。公司采用 Freemium 模式，个人用户可免费使用核心功能，团队版和企业版则提供高级协作、安全和监控能力。2021 年，Postman 完成 2.25 亿美元 D 轮融资，估值达到 56 亿美元，跻身\"独角兽\"行列。如今，世界 500 强企业中 98% 都在使用 Postman。" }
+  ],
+  "source_url": "https://www.postman.com",
+  "sources": [
+    { "name": "Postman 官网", "url": "https://www.postman.com" },
+    { "name": "Postman API Network", "url": "https://www.postman.com/api-network/" }
+  ],
+  "updated": "2026-10-01"
+}

@@ -1,0 +1,40 @@
+{
+  "id": 25,
+  "title": "Nginx",
+  "aliases": ["Nginx", "Engine X", "反向代理", "Web服务器"],
+  "category": "开发工具",
+  "tags": ["Web服务器", "反向代理", "负载均衡", "高并发", "C10K", "开源"],
+  "abstract": "Nginx 是高性能的开源 HTTP 和反向代理服务器，也是 IMAP/POP3 代理服务器，以高并发、低内存消耗著称，是全球最流行的 Web 服务器之一。",
+  "thumb": "",
+  "infobox": {
+    "软件名称": "Nginx",
+    "开发者": "Igor Sysoev",
+    "首次发布": "2004年",
+    "编程语言": "C",
+    "开源协议": "BSD-like（Nginx 开源版）",
+    "商业公司": "F5 Networks（2019年收购）",
+    "名称发音": "Engine X（读音）"
+  },
+  "content": [
+    { "type": "paragraph", "text": "Nginx（发音为 Engine X）是高性能的开源 HTTP 服务器和反向代理服务器，同时也是 IMAP/POP3 代理服务器。它由 Igor Sysoev 于 2004 年首次发布，以高并发、低内存消耗和高稳定性著称。如今，Nginx 是全球最流行的 Web 服务器之一，被超过 4 亿个网站使用，包括 Netflix、Airbnb、Dropbox、WordPress.com 等巨头。" },
+    { "type": "subtitle", "text": "诞生背景" },
+    { "type": "paragraph", "text": "Nginx 的诞生源于 C10K 问题——即如何让单台服务器同时处理一万个并发连接。2000 年代初，Apache HTTP Server 是绝对的主流，但它采用的每连接一进程（或线程）模型在面对大量并发连接时内存消耗巨大。Igor Sysoev 在为俄罗斯访问量极大的网站 Rambler 工作时，决定编写一个全新的 Web 服务器，采用事件驱动、异步非阻塞的架构。2004 年 Nginx 0.1.0 发布，此后迅速在俄罗斯和东欧流行，最终走向全球。" },
+    { "type": "subtitle", "text": "事件驱动架构" },
+    { "type": "paragraph", "text": "Nginx 的高性能源于其独特的架构设计。它采用事件驱动（Event-Driven）和异步非阻塞（Asynchronous Non-Blocking）模型，使用单个或少量工作进程（Worker Process）处理大量并发连接。每个工作进程基于 epoll（Linux）、kqueue（BSD）或 event ports（Solaris）等高效事件通知机制，在单个线程内管理数千个连接。这种架构避免了传统多线程模型中的上下文切换和锁竞争开销，使得 Nginx 在极低内存占用下实现极高的并发处理能力。" },
+    { "type": "subtitle", "text": "核心功能" },
+    { "type": "paragraph", "text": "Nginx 的核心功能涵盖多个层面。作为 Web 服务器，它可以直接托管静态文件（HTML、CSS、JS、图片），性能远超 Apache；作为反向代理，它位于客户端和后端服务器之间，转发请求并返回响应，隐藏后端架构；作为负载均衡器，它支持轮询、加权轮询、IP 哈希、最少连接等多种调度算法，将流量分发到多个后端节点；此外还提供 SSL/TLS 终止、HTTP/2 和 HTTP/3（QUIC）支持、gzip 压缩、访问控制、限流限速等丰富功能。" },
+    { "type": "subtitle", "text": "配置哲学" },
+    { "type": "paragraph", "text": "Nginx 的配置哲学是简洁而声明式的。配置文件由指令（Directives）和上下文（Contexts）组成，采用层级结构。http 上下文定义全局的 HTTP 行为，server 块定义虚拟主机，location 块匹配 URL 路径并指定处理方式。这种配置方式直观易懂，配合 include 指令可以模块化组织。相比 Apache 的 .htaccess 分布式配置，Nginx 将所有配置集中在主配置文件中，避免了每次请求时的文件查找开销，这也是其高性能的原因之一。" },
+    { "type": "subtitle", "text": "商业发展与 Nginx Plus" },
+    { "type": "paragraph", "text": "Nginx 的商业化路径颇为独特。开源版 Nginx 采用 BSD-like 协议免费使用，而商业版 Nginx Plus 提供高级功能，如主动健康检查、动态配置、会话保持、键值存储、更丰富的监控指标等。2011 年 Igor Sysoev 和 Maxim Konovalov 成立 Nginx, Inc. 公司推动商业发展。2019 年，F5 Networks 以 6.7 亿美元收购 Nginx，将其纳入应用交付网络（ADN）产品线。尽管被收购，Nginx 开源项目仍保持独立发展，持续发布新版本。" },
+    { "type": "subtitle", "text": "市场地位" },
+    { "type": "paragraph", "text": "根据 W3Techs 统计，Nginx 在全球 Web 服务器市场中的份额长期位居第一，超过 33%，远超 Apache 和 Cloudflare。在 Top 1000 高流量网站中，Nginx 的采用率更是超过 60%。它已成为现代 Web 架构的标准组件——无论是作为前端网关、API 网关、负载均衡器还是静态资源服务器，Nginx 都扮演着关键角色。2022 年 Igor Sysoev 宣布从 Nginx 项目退休，结束了近二十年的主导开发，但 Nginx 的影响力和市场地位依然稳固。" }
+  ],
+  "source_url": "https://nginx.org",
+  "sources": [
+    { "name": "Nginx 官网", "url": "https://nginx.org" },
+    { "name": "Nginx 配置文档", "url": "https://nginx.org/en/docs/" },
+    { "name": "Nginx Plus", "url": "https://www.nginx.com" }
+  ],
+  "updated": "2026-10-01"
+}

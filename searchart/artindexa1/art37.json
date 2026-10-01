@@ -1,0 +1,36 @@
+{
+  "id": 37,
+  "title": "TikTok（抖音）",
+  "aliases": ["TikTok", "抖音", "短视频应用", "Douyin"],
+  "category": "社交",
+  "tags": ["短视频", "字节跳动", "算法推荐", "全球化", "社交媒体"],
+  "abstract": "TikTok 是字节跳动旗下的短视频应用，以用户自拍和挑战视频为特色，凭借强大的算法推荐迅速崛起为全球最流行的社交媒体应用之一。",
+  "thumb": "https://www.tiktok.com/static/img/tiktok-logo/tiktok-logo.png",
+  "infobox": {
+    "产品名称": "TikTok（抖音）",
+    "母公司": "字节跳动（ByteDance）",
+    "成立时间": "2016年（抖音）/ 2017年（TikTok 国际版）",
+    "创始人": "张一鸣",
+    "平台类型": "短视频社交",
+    "全球月活用户": "超过 15 亿",
+    "核心特色": "算法推荐、挑战赛、用户创作"
+  },
+  "content": [
+    { "type": "paragraph", "text": "TikTok 是字节跳动旗下的短视频应用，以用户自拍和挑战视频为特色，凭借强大的算法推荐迅速崛起为全球最流行的社交媒体应用之一。它于 2016 年以\"抖音\"的名称在中国市场推出，2017 年推出国际版 TikTok，随后通过收购 Musical.ly 并与之合并，迅速打开全球市场。" },
+    { "type": "image", "src": "https://www.tiktok.com/static/img/tiktok-logo/tiktok-logo.png", "caption": "TikTok 的标志" },
+    { "type": "subtitle", "text": "全球化扩张" },
+    { "type": "paragraph", "text": "TikTok 的全球化扩张堪称互联网史上的经典案例。2017 年，字节跳动以约 10 亿美元收购了总部位于上海的 Musical.ly——一款在美国青少年中流行的短视频应用。随后，字节跳动将 TikTok 与 Musical.ly 合并，把 Musical.ly 的欧美用户基础与 TikTok 的算法技术相结合，实现了爆发式增长。到 2020 年，TikTok 已成为全球下载量最高的应用之一，在印度、美国、欧洲等地拥有数亿用户。" },
+    { "type": "subtitle", "text": "算法与内容生态" },
+    { "type": "paragraph", "text": "TikTok 最核心的竞争力是其推荐算法。基于字节跳动在今日头条等产品上积累的内容分发经验，TikTok 的\"For You\"推荐流能够根据用户的停留时间、互动行为、完播率等信号，精准预测用户兴趣，不断推送个性化内容。这种\"越刷越上瘾\"的体验让 TikTok 的用户时长长期位居社交应用前列。平台上的挑战赛（Challenge）、热门音乐、舞蹈和梗文化形成了独特的内容生态，不断输出全球性的流行文化。" },
+    { "type": "subtitle", "text": "全球化与争议" },
+    { "type": "paragraph", "text": "TikTok 在全球范围内迅速扩张的同时，也面临诸多争议。数据隐私和安全问题是各国监管机构的关注焦点，美国、欧盟、印度等地先后对 TikTok 的数据处理方式提出质疑。2020 年，印度以数据安全为由全面封禁 TikTok；美国也曾多次试图通过行政命令限制或强制出售 TikTok 在美业务。此外，平台上的内容审核、未成年人保护、错误信息和成瘾性等问题也持续引发社会讨论。尽管如此，TikTok 仍保持了全球数亿用户的规模，是全球最具影响力的短视频平台。" },
+    { "type": "subtitle", "text": "电商与商业生态" },
+    { "type": "paragraph", "text": "近年来 TikTok 大力拓展电商业务。TikTok Shop 允许创作者在短视频和直播中直接挂载商品链接，用户可以在应用内完成从发现到购买的完整流程。这一模式在东南亚市场尤其成功，成为当地电商增长的重要驱动力。TikTok 的\"兴趣电商\"模式将内容与交易深度融合，正在重塑全球电商格局，对亚马逊、Shopify 等传统电商平台构成挑战。" }
+  ],
+  "source_url": "https://www.tiktok.com",
+  "sources": [
+    { "name": "TikTok 官网", "url": "https://www.tiktok.com" },
+    { "name": "字节跳动", "url": "https://www.bytedance.com" }
+  ],
+  "updated": "2026-10-01"
+}

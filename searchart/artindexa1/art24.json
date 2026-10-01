@@ -1,0 +1,39 @@
+{
+  "id": 24,
+  "title": "Android Studio",
+  "aliases": ["Android Studio", "安卓开发工具", "Android IDE"],
+  "category": "开发工具",
+  "tags": ["Android", "IDE", "IntelliJ", "Gradle", "移动开发", "Jetpack"],
+  "abstract": "Android Studio 是 Google 官方推出的 Android 应用集成开发环境，基于 IntelliJ IDEA，集成了代码编辑、调试、性能分析和模拟器等功能，是 Android 开发者的标配工具。",
+  "thumb": "",
+  "infobox": {
+    "软件名称": "Android Studio",
+    "开发商": "Google",
+    "首次发布": "2013年5月",
+    "基础平台": "IntelliJ IDEA（JetBrains）",
+    "编程语言支持": "Java、Kotlin、C++",
+    "构建系统": "Gradle",
+    "平台": "Windows、macOS、Linux",
+    "模拟器": "内置 Android 模拟器（AVD）"
+  },
+  "content": [
+    { "type": "paragraph", "text": "Android Studio 是 Google 官方推出的 Android 应用集成开发环境（IDE），于 2013 年 5 月在 Google I/O 大会上首次发布。它基于 JetBrains 的 IntelliJ IDEA 社区版构建，集成了代码编辑、智能补全、调试、性能分析、布局编辑器和 Android 模拟器等功能，是 Android 开发者的标配工具。" },
+    { "type": "subtitle", "text": "诞生背景" },
+    { "type": "paragraph", "text": "在 Android Studio 出现之前，Android 开发者主要使用 Eclipse 配合 ADT（Android Development Tools）插件进行开发。然而，Eclipse 的性能和稳定性问题日益突出，Google 决定转向更现代的 IDE 平台。2013 年，Google 基于 IntelliJ IDEA 开发了专用的 Android IDE，这就是 Android Studio。2014 年 Android Studio 1.0 正式发布，标志着 Android 开发工具进入全新阶段。" },
+    { "type": "subtitle", "text": "核心功能" },
+    { "type": "paragraph", "text": "Android Studio 提供了一整套专业的开发工具。代码编辑器支持 Java、Kotlin 和 C++，具备智能补全、实时错误检查、快速修复和重构能力；布局编辑器（Layout Editor）提供可视化拖拽界面，同时保留 XML 代码编辑，支持多屏幕尺寸预览；APK 分析器（APK Analyzer）帮助开发者优化应用体积；Profiler 性能分析器提供 CPU、内存、网络和能耗的实时监控，是排查性能瓶颈的利器；内置的 Android 模拟器（AVD Manager）支持多种设备配置、系统版本和传感器模拟。" },
+    { "type": "subtitle", "text": "Gradle 构建系统" },
+    { "type": "paragraph", "text": "Android Studio 使用 Gradle 作为构建系统，这是其架构的核心。Gradle 是一个基于 Groovy 或 Kotlin DSL 的自动化构建工具，支持灵活的依赖管理和增量编译。Android Gradle 插件（AGP）在此基础上提供了 Android 特有的构建能力，如资源压缩、代码混淆（R8）、多渠道打包、变体构建（Build Variants）等。通过 build.gradle 文件，开发者可以精确控制编译、打包和签名流程，实现复杂的构建自动化。" },
+    { "type": "subtitle", "text": "Kotlin 与现代化" },
+    { "type": "paragraph", "text": "2017 年 Google 宣布 Kotlin 成为 Android 官方支持的语言，2019 年进一步宣布 Kotlin 为 Android 开发的首选语言。这一转变深刻影响了 Android 开发生态。Kotlin 由 JetBrains 开发，是一种运行在 JVM 上的现代编程语言，具有空安全、扩展函数、协程（Coroutines）、数据类等特性，相比 Java 更加简洁安全。Android Studio 对 Kotlin 提供了深度支持，包括 Java 到 Kotlin 的自动转换工具、Kotlin 专用重构等。配合 Jetpack 组件库（ViewModel、LiveData、Room、Navigation 等），现代 Android 开发体验得到了质的提升。" },
+    { "type": "subtitle", "text": "Compose 与声明式 UI" },
+    { "type": "paragraph", "text": "2021 年 Google 正式发布 Jetpack Compose，这是 Android 的现代声明式 UI 工具包。与传统的基于 XML 的命令式 UI 不同，Compose 允许开发者用 Kotlin 代码直接描述 UI，数据变化时 UI 自动更新。这一范式借鉴了 React 和 Flutter 的设计思想，大幅简化了 UI 开发。Android Studio 为 Compose 提供了专门的预览功能（Compose Preview），支持实时预览不同状态和设备下的界面效果，极大提升了开发效率。" }
+  ],
+  "source_url": "https://developer.android.com/studio",
+  "sources": [
+    { "name": "Android 开发者官网", "url": "https://developer.android.com" },
+    { "name": "Android Studio 下载", "url": "https://developer.android.com/studio" },
+    { "name": "Kotlin 官网", "url": "https://kotlinlang.org" }
+  ],
+  "updated": "2026-10-01"
+}

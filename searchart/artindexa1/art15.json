@@ -1,0 +1,38 @@
+{
+  "id": 15,
+  "title": "TensorFlow",
+  "aliases": ["TensorFlow", "TF", "Google机器学习框架"],
+  "category": "人工智能",
+  "tags": ["机器学习", "深度学习", "Python", "Google", "Keras", "AI"],
+  "abstract": "TensorFlow 是 Google 推出的开源端到端机器学习平台，拥有灵活的工具、库和社区资源，从研究原型到生产部署提供全链路支持，是深度学习领域最具影响力的框架之一。",
+  "thumb": "",
+  "infobox": {
+    "软件名称": "TensorFlow",
+    "开发商": "Google Brain 团队",
+    "首次发布": "2015年11月",
+    "编程语言": "Python、C++、JavaScript",
+    "开源协议": "Apache 2.0",
+    "核心组件": "Keras 高级 API、TensorFlow Lite、TensorFlow.js、TFX",
+    "命名含义": "Tensor（张量）+ Flow（流）"
+  },
+  "content": [
+    { "type": "paragraph", "text": "TensorFlow 是 Google 推出的开源端到端机器学习平台，于 2015 年 11 月正式开源。其名称由\"张量\"（Tensor，多维数组）和\"流\"（Flow，数据流图）组合而来，形象地描述了其计算模型：数据以张量形式在图中的节点（操作）之间流动。TensorFlow 从研究原型到生产部署提供全链路支持，是深度学习领域最具影响力的框架之一。" },
+    { "type": "subtitle", "text": "发展历程" },
+    { "type": "paragraph", "text": "TensorFlow 的前身是 Google 内部的 DistBelief 系统，用于大规模神经网络训练。2015 年 Google 将其重构为 TensorFlow 并开源，迅速成为学术界和工业界的主流框架。早期的 TensorFlow 以静态计算图为核心，API 相对底层，学习曲线陡峭。2019 年推出的 TensorFlow 2.0 引入即时执行（Eager Execution）模式，并将 Keras 确立为官方高级 API，大幅改善了易用性。如今，TensorFlow 与 PyTorch 并列为深度学习的两大主流框架。" },
+    { "type": "subtitle", "text": "核心架构" },
+    { "type": "paragraph", "text": "TensorFlow 的核心架构围绕计算图（Computation Graph）构建。在 TensorFlow 2.x 中，虽然默认采用即时执行模式（更接近普通 Python 代码的执行方式），但仍保留 tf.function 装饰器将 Python 函数编译为高性能图，兼顾灵活性和执行效率。底层使用 XLA（Accelerated Linear Algebra）编译器优化计算图，支持在 CPU、GPU 和 TPU（Google 自研张量处理器）上高效运行。" },
+    { "type": "subtitle", "text": "Keras 高级 API" },
+    { "type": "paragraph", "text": "Keras 是 TensorFlow 2.x 的官方高级 API，由 François Chollet 开发。它以用户友好、模块化和可扩展为设计理念，让用户可以用极少代码快速构建神经网络。通过 Sequential（顺序模型）和 Functional（函数式 API）两种模式，开发者可以定义从简单的多层感知机到复杂的多输入多输出网络。Keras 的 model.fit() 方法封装了训练循环，内置回调（Callback）机制支持早停、学习率调度、模型检查点等高级训练策略。" },
+    { "type": "subtitle", "text": "产品矩阵" },
+    { "type": "paragraph", "text": "TensorFlow 拥有完整的产品矩阵覆盖多种部署场景。TensorFlow Lite 用于在移动端和嵌入式设备（如 Android、iOS、树莓派）上运行模型；TensorFlow.js 允许在浏览器和 Node.js 中训练和部署模型；TensorFlow Extended（TFX）是面向生产环境的端到端机器学习平台，涵盖数据验证、特征工程、模型训练、验证和部署的全链路；TensorFlow Serving 则是专用的模型服务系统，支持高性能的在线推理。" },
+    { "type": "subtitle", "text": "与 PyTorch 的对比" },
+    { "type": "paragraph", "text": "在深度学习框架的\"双雄争霸\"中，TensorFlow 和 PyTorch 各有优势。PyTorch 凭借动态图（Define-by-Run）和 Pythonic 的 API 设计，在学术研究领域占据主导，论文实现率超过 75%。TensorFlow 则在工业部署、移动端和大规模生产环境中更具优势，其 TFX 和 TFLite 生态成熟，适合需要稳定性和可维护性的企业级应用。近年来 Google 推出 JAX（基于 XLA 的高性能数值计算库），被视为 TensorFlow 在研究方向上的潜在继任者。" }
+  ],
+  "source_url": "https://www.tensorflow.org",
+  "sources": [
+    { "name": "TensorFlow 官网", "url": "https://www.tensorflow.org" },
+    { "name": "Keras 官网", "url": "https://keras.io" },
+    { "name": "TensorFlow GitHub", "url": "https://github.com/tensorflow/tensorflow" }
+  ],
+  "updated": "2026-10-01"
+}

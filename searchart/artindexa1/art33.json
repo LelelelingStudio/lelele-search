@@ -1,0 +1,38 @@
+{
+  "id": 33,
+  "title": "Twitter（X）",
+  "aliases": ["Twitter", "X", "推特", "X平台"],
+  "category": "社交",
+  "tags": ["社交媒体", "实时信息", "马斯克", "短内容", "公共对话"],
+  "abstract": "Twitter（现已更名为 X）是全球知名的社交媒体平台，以实时、简洁的信息流为核心特色，曾是全球公共对话的“市政厅”，2023 年被埃隆·马斯克收购后更名为 X。",
+  "thumb": "",
+  "infobox": {
+    "平台名称": "X（原 Twitter）",
+    "成立时间": "2006年",
+    "创始人": "Jack Dorsey、Biz Stone、Evan Williams",
+    "收购时间": "2022年10月（埃隆·马斯克以 440 亿美元收购）",
+    "更名时间": "2023年7月（Twitter → X）",
+    "母公司": "xAI（马斯克旗下）",
+    "日活用户": "超过 2.5 亿"
+  },
+  "content": [
+    { "type": "paragraph", "text": "Twitter（现已更名为 X）是全球知名的社交媒体平台，以实时、简洁的信息流为核心特色，曾是全球公共对话的\"市政厅\"。用户可以通过文字、图片、视频和直播分享即时动态，关注感兴趣的人和话题。2022 年 10 月，埃隆·马斯克以 440 亿美元收购 Twitter，并于 2023 年 7 月将其更名为 X，试图将其打造为\"万能应用\"（Everything App）。" },
+    { "type": "subtitle", "text": "诞生与早期发展" },
+    { "type": "paragraph", "text": "Twitter 诞生于 2006 年，由 Jack Dorsey、Biz Stone 和 Evan Williams 联合创立。最初的灵感源于一个简单的问题：能否用短信的方式向一群人广播自己的状态？Twitter 的核心创新是\"推文\"（Tweet）——最初限制为 140 个字符（后来扩展到 280 个字符），这种极简的表达形式反而催生了独特的社交文化。2007 年西南偏南（SXSW）音乐节上，Twitter 的实时讨论功能让其一夜爆红，此后迅速成为全球科技、媒体和政治人物的重要发声渠道。" },
+    { "type": "subtitle", "text": "文化影响力" },
+    { "type": "paragraph", "text": "Twitter 对全球文化和社会的影响远超其技术本身。它改变了新闻传播的方式，让突发事件能够第一时间从现场传播出去；它创造了#标签（Hashtag）、@提及、转推（Retweet）等全新的网络交互语言；它成为政治人物、明星和普通人直接对话的广场，阿拉伯之春、占领华尔街等社会运动中都能看到 Twitter 的身影。Twitter 上的\"热搜\"（Trending Topics）成为衡量公众关注度的重要指标。" },
+    { "type": "subtitle", "text": "马斯克收购与变革" },
+    { "type": "paragraph", "text": "2022 年 4 月，埃隆·马斯克宣布收购 Twitter，经历数月的法律纠纷后，于 2022 年 10 月以 440 亿美元完成交易，并将公司私有化。收购后，马斯克进行了一系列激进的改革：大规模裁员（员工从 7500 人裁减至约 1500 人）；推出付费认证服务 Twitter Blue（后更名为 X Premium）；放宽内容审核政策；开放算法源代码；引入长文、音频和视频通话等功能。这些变革在用户和广告商中引发了巨大争议。" },
+    { "type": "subtitle", "text": "更名为 X" },
+    { "type": "paragraph", "text": "2023 年 7 月，马斯克宣布将 Twitter 更名为 X，并更换了经典的蓝鸟 Logo。马斯克表示，X 的愿景是打造\"万能应用\"，融合社交、支付、购物、视频通话等多种功能，对标微信的\"超级应用\"模式。然而，更名后的 X 在品牌认知度上遭遇挑战，大量用户仍习惯称之为 Twitter。2024 年 X 的估值已降至收购价的约一半，广告收入也大幅下滑。" },
+    { "type": "subtitle", "text": "竞争格局" },
+    { "type": "paragraph", "text": "在 X 经历动荡的同时，其竞争对手迎来了发展机会。Meta 推出的 Threads 在上线首日即获得数千万用户；Bluesky（由 Twitter 联合创始人 Jack Dorsey 发起的去中心化社交协议）获得了大量关注；Mastodon 等联邦式社交网络也吸引了一批追求开放标准的用户。此外，TikTok 和 Instagram 在短视频领域的强势表现，进一步分流了 X 的用户时长和广告预算。" }
+  ],
+  "source_url": "https://x.com",
+  "sources": [
+    { "name": "X（原 Twitter）官网", "url": "https://x.com" },
+    { "name": "Bluesky", "url": "https://bsky.app" },
+    { "name": "Threads", "url": "https://www.threads.net" }
+  ],
+  "updated": "2026-10-01"
+}

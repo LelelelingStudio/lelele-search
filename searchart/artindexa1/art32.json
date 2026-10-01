@@ -1,0 +1,37 @@
+{
+  "id": 32,
+  "title": "Canva（可画）",
+  "aliases": ["Canva", "可画", "在线设计平台"],
+  "category": "设计",
+  "tags": ["平面设计", "在线工具", "模板", "拖拽编辑", "品牌设计"],
+  "abstract": "Canva 是全球领先的在线图形设计平台，提供海量模板和素材，让任何人都能轻松创建专业设计，从社交媒体图片到演示文稿、海报和视频均可胜任。",
+  "thumb": "",
+  "infobox": {
+    "公司名称": "Canva",
+    "成立时间": "2012年",
+    "创始人": "Melanie Perkins、Cliff Obrecht",
+    "总部": "澳大利亚悉尼",
+    "平台": "Web、iOS、Android",
+    "用户数": "超过 1.7 亿月活用户",
+    "估值": "超过 400 亿美元（2024年）"
+  },
+  "content": [
+    { "type": "paragraph", "text": "Canva 是全球领先的在线图形设计平台，由 Melanie Perkins 和 Cliff Obrecht 于 2012 年在澳大利亚悉尼创立。它的使命是\"赋能世界设计\"，让没有任何设计基础的人也能通过简单的拖拽操作创建出专业水准的视觉作品。Canva 提供海量模板和素材，覆盖社交媒体图片、演示文稿、海报、视频、名片、简历等几乎所有平面设计场景。" },
+    { "type": "subtitle", "text": "诞生故事" },
+    { "type": "paragraph", "text": "Canva 的诞生源于 Melanie Perkins 的教学经历。2000 年代后期，她在西澳大学讲授平面设计课程时发现，学生在使用 Photoshop 和 InDesign 等专业软件时普遍感到困难，学习曲线过于陡峭。她萌生了一个想法：能否做一款像 PowerPoint 一样简单，但能做出像 Photoshop 一样漂亮设计的工具？这个想法最终演化为 Canva。早期团队仅有三人，如今已成长为拥有数千名员工的全球公司。" },
+    { "type": "subtitle", "text": "核心功能" },
+    { "type": "paragraph", "text": "Canva 的核心功能围绕\"模板 + 拖拽\"的交互模型展开。平台提供数十万个精心设计的模板，覆盖数百种设计场景，用户只需选择一个模板，替换文字和图片即可完成设计。编辑器支持图层管理、自由变换、滤镜调整、透明度控制等基础功能，以及魔法换稿（Magic Switch，一键将设计转换为不同尺寸和格式）、品牌工具包（统一品牌色、字体和 Logo）等高级特性。Canva 的素材库包含数千万张照片、插画、图标和字体，大部分可免费使用。" },
+    { "type": "subtitle", "text": "Canva AI 与 Magic Studio" },
+    { "type": "paragraph", "text": "2023 年 Canva 推出 Magic Studio，是其 AI 功能的集合平台。核心功能包括：Magic Write（AI 文案生成）、Magic Design（根据文字描述自动生成设计）、Magic Edit（智能编辑图片元素）、Magic Grab（一键抠图）、Magic Animate（为静态设计添加动画）、Magic Switch（一键转换尺寸和语言）等。这些 AI 功能大幅降低了设计的门槛，用户只需描述需求，Canva 即可生成多个设计方案供选择。" },
+    { "type": "subtitle", "text": "商业模式" },
+    { "type": "paragraph", "text": "Canva 采用 Freemium 模式。免费版提供基础模板和素材，足以满足个人用户的日常需求；Canva Pro 版（付费）解锁高级功能、海量素材和品牌工具包；Canva for Teams 面向团队协作，提供共享文件夹、审批流程和高级权限管理；Canva for Enterprise 则提供 SSO、数据驻留和安全审计等企业级能力。2024 年 Canva 完成新一轮融资，估值超过 400 亿美元，成为全球最有价值的私人科技公司之一。" },
+    { "type": "subtitle", "text": "市场影响" },
+    { "type": "paragraph", "text": "Canva 的成功重新定义了\"设计\"的边界。它让设计从专业设计师的专属技能变成了人人可用的日常能力。据统计，Canva 的月活用户已超过 1.7 亿，累计创建了超过 200 亿个设计。在教育领域，Canva for Education 为数百万师生提供免费的设计工具；在企业领域，Canva 正在挑战 Adobe 在传统设计软件市场的统治地位，被媒体称为\"Adobe 最危险的对手\"。" }
+  ],
+  "source_url": "https://www.canva.com",
+  "sources": [
+    { "name": "Canva 官网", "url": "https://www.canva.com" },
+    { "name": "Canva Magic Studio", "url": "https://www.canva.com/magic-studio/" }
+  ],
+  "updated": "2026-10-01"
+}

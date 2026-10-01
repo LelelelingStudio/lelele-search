@@ -1,0 +1,37 @@
+{
+  "id": 34,
+  "title": "Instagram",
+  "aliases": ["Instagram", "IG", "Ins", "照片墙"],
+  "category": "社交",
+  "tags": ["社交媒体", "图片分享", "短视频", "Meta", "视觉内容", "Reels"],
+  "abstract": "Instagram 是 Meta 公司旗下一款以图片和视频分享为核心的全球顶级社交媒体应用，以精美的滤镜和视觉化内容风靡世界，月活跃用户超过 20 亿。",
+  "thumb": "",
+  "infobox": {
+    "平台名称": "Instagram",
+    "成立时间": "2010年",
+    "创始人": "Kevin Systrom、Mike Krieger",
+    "所属公司": "Meta（原 Facebook，2012年收购）",
+    "收购金额": "10 亿美元（2012年）",
+    "月活用户": "超过 20 亿",
+    "核心功能": "照片、Stories、Reels、直播、私信"
+  },
+  "content": [
+    { "type": "paragraph", "text": "Instagram 是 Meta 公司旗下一款以图片和视频分享为核心的全球顶级社交媒体应用。它以精美的滤镜和视觉化内容风靡世界，月活跃用户超过 20 亿，是全球最受欢迎的社交平台之一。从最初的方形照片分享工具，到如今涵盖 Stories、Reels、直播、购物等多元功能的超级应用，Instagram 持续引领着社交媒体的潮流。" },
+    { "type": "subtitle", "text": "诞生故事" },
+    { "type": "paragraph", "text": "Instagram 诞生于 2010 年，由 Kevin Systrom 和 Mike Krieger 在旧金山创立。最初它是一款名为 Burbn 的地理位置签到应用，功能繁杂。Systrom 和 Krieger 发现用户最频繁使用的是其中的照片分享功能，于是果断砍掉其他功能，专注于照片分享，并加入了独特的方形裁剪和滤镜效果。2010 年 10 月 Instagram 上线，仅两个月就获得 100 万用户，这种增长速度在当时堪称奇迹。" },
+    { "type": "subtitle", "text": "核心功能演进" },
+    { "type": "paragraph", "text": "Instagram 的功能经历了多次重大演进。2012 年推出视频分享，时长从最初的 15 秒逐步延长到 60 秒；2013 年推出短视频功能（后来发展为 IGTV）；2016 年推出 Stories（故事）——借鉴 Snapchat 的阅后即焚理念，用户可以发布 24 小时后自动消失的照片和视频，这一功能迅速成为 Instagram 最受欢迎的特性之一；2018 年推出 IG Live（直播）；2020 年全面推出 Reels（短视频），正面迎战 TikTok。" },
+    { "type": "subtitle", "text": "Reels 与短视频战争" },
+    { "type": "paragraph", "text": "面对 TikTok 的强势崛起，Instagram 于 2020 年推出 Reels 功能，允许用户在 Instagram 内创作和发现 15 至 90 秒的短视频，配以音乐和特效。Reels 的上线标志着 Instagram 从\"照片社交网络\"向\"视频优先平台\"的战略转型。Meta 投入巨资推广 Reels，包括创作者基金、算法倾斜和跨平台推荐。如今，Reels 已成为 Instagram 增长最快的内容形式，也是其对抗 TikTok 的核心武器。" },
+    { "type": "subtitle", "text": "商业模式" },
+    { "type": "paragraph", "text": "Instagram 的核心商业模式是广告。其广告系统依托 Meta 强大的用户画像和精准投放能力，为品牌提供 Feed 广告、Stories 广告、Reels 广告、Explore 广告和购物广告等多种形态。此外，Instagram Shopping 允许品牌直接在应用内开设商店，用户可以不离开应用即可完成购买，形成\"发现-种草-购买\"的闭环。据统计，Instagram 为 Meta 贡献了超过三分之一的广告收入。" },
+    { "type": "subtitle", "text": "文化与社会影响" },
+    { "type": "paragraph", "text": "Instagram 深刻影响了当代视觉文化和社交行为。它催生了\"网红\"（Influencer）这一全新职业，创造了数十亿美元的内容创作者经济；它推动了美学（Aesthetic）文化的流行，从\"极简风\"到\"Y2K\"，Instagram 上的视觉趋势深刻影响着时尚、家居、旅行甚至饮食；同时，它也引发了关于心理健康、身体焦虑、信息茧房和虚假信息的广泛讨论。Instagram 的影响力早已超越社交媒体范畴，成为塑造当代文化的重要力量。" }
+  ],
+  "source_url": "https://www.instagram.com",
+  "sources": [
+    { "name": "Instagram 官网", "url": "https://www.instagram.com" },
+    { "name": "Meta 公司", "url": "https://about.meta.com" }
+  ],
+  "updated": "2026-10-01"
+}

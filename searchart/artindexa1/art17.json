@@ -1,0 +1,40 @@
+{
+  "id": 17,
+  "title": "React",
+  "aliases": ["React", "React.js", "ReactJS", "前端框架"],
+  "category": "开发工具",
+  "tags": ["前端", "UI库", "JavaScript", "Meta", "组件化", "虚拟DOM"],
+  "abstract": "React 是 Meta（原 Facebook）开发的用于构建 Web 和移动用户界面的开源 JavaScript 库，以组件化和声明式编程为核心思想，是全球最流行的前端框架之一。",
+  "thumb": "",
+  "infobox": {
+    "软件名称": "React",
+    "开发商": "Meta（原 Facebook）",
+    "首次发布": "2013年5月（开源）",
+    "编程语言": "JavaScript / TypeScript",
+    "开源协议": "MIT",
+    "核心理念": "组件化、声明式、一次学习随处编写",
+    "衍生技术": "React Native、Next.js"
+  },
+  "content": [
+    { "type": "paragraph", "text": "React 是 Meta（原 Facebook）开发的用于构建 Web 和移动用户界面的开源 JavaScript 库，于 2013 年 5 月正式开源。它以组件化和声明式编程为核心思想，让开发者可以像搭积木一样构建复杂的用户界面。React 并非全栈框架（如 Angular 或 Vue 的全家桶），而是一个专注于视图层的库，常与 Redux、React Router 等工具配合使用，组成完整的前端解决方案。" },
+    { "type": "subtitle", "text": "诞生背景" },
+    { "type": "paragraph", "text": "React 诞生于 Facebook 内部。2011 年前后，Facebook 的 Web 应用日益复杂，传统 MVC 架构在数据频繁变化时难以维护。工程师 Jordan Walke 受 XHP（Facebook 的 PHP 组件框架）和函数式编程思想启发，开发了名为 \"FaxJS\" 的原型，这就是 React 的前身。React 最初在 Facebook 的新闻流（News Feed）功能中试用，2013 年 Instagram 被 Facebook 收购后，React 被用于重构 Instagram 网站，随后正式开源。" },
+    { "type": "subtitle", "text": "核心特性" },
+    { "type": "paragraph", "text": "React 的核心特性之一是组件化（Component）。开发者将 UI 拆分为独立的、可复用的组件，每个组件管理自己的状态并返回要渲染的内容。其二是虚拟 DOM（Virtual DOM）——React 在内存中维护一份 DOM 的轻量表示，当状态变化时，先在虚拟 DOM 上计算最小差异，再批量更新真实 DOM，从而极大提升了渲染性能。其三是声明式编程——开发者只需描述 UI 在任意状态下的样子，React 负责高效地更新和渲染，无需手动操作 DOM。" },
+    { "type": "subtitle", "text": "Hooks 革命" },
+    { "type": "paragraph", "text": "2019 年 React 16.8 引入的 Hooks 是 React 发展史上的里程碑。Hooks 允许开发者在函数组件中使用状态（useState）、生命周期（useEffect）、上下文（useContext）等 React 特性，无需再编写类组件。这一变革大幅简化了组件逻辑的组织方式，使得状态逻辑可以被抽取为可复用的自定义 Hook。常用的 Hooks 还包括 useReducer、useMemo、useCallback、useRef 等，它们共同构成了现代 React 开发的标准范式。" },
+    { "type": "subtitle", "text": "React 生态" },
+    { "type": "paragraph", "text": "React 的繁荣离不开其庞大的生态。Next.js（Vercel 公司开发）是基于 React 的全栈框架，提供服务端渲染（SSR）、静态站点生成（SSG）、文件路由和 API 路由，是构建生产级 React 应用的首选；Remix、Gatsby、Astro 等框架也各具特色。状态管理方面，Redux Toolkit 已成为事实标准，Zustand、Jotai、Recoil 等轻量方案也广受欢迎。React Router 是路由的事实标准，React Query（TanStack Query）则解决了服务端状态管理问题。" },
+    { "type": "subtitle", "text": "React Native 与跨平台" },
+    { "type": "paragraph", "text": "React 的\"一次学习，随处编写\"理念延伸到了移动端。React Native 是 Meta 开源的移动应用框架，允许开发者使用 React 和 JavaScript 编写原生 iOS 和 Android 应用。它通过将 React 组件映射到原生 UI 组件，实现了接近原生的性能和体验，同时保持了 Web 开发的开发效率和热更新能力。React Native 被 Meta（Instagram、Facebook 应用）、微软（Office、Outlook）、Shopify 等公司广泛用于生产环境。" },
+    { "type": "subtitle", "text": "竞争格局" },
+    { "type": "paragraph", "text": "在前端框架的竞争格局中，React 长期占据主导地位。根据 State of JS 调查，React 的使用率和满意度均名列前茅。Vue.js 凭借渐进式设计和更低的学习曲线在亚洲和中小型项目中广受欢迎；Angular 则凭借完整的工程化方案在大型企业应用中保持份额；Svelte 以编译时优化的创新思路吸引了大量关注。不过，凭借 Meta 的持续投入、庞大的社区和成熟的生态，React 仍是当前前端开发的事实标准。" }
+  ],
+  "source_url": "https://react.dev",
+  "sources": [
+    { "name": "React 官网", "url": "https://react.dev" },
+    { "name": "React GitHub", "url": "https://github.com/facebook/react" },
+    { "name": "Next.js 官网", "url": "https://nextjs.org" }
+  ],
+  "updated": "2026-10-01"
+}

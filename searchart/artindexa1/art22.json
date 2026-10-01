@@ -1,0 +1,40 @@
+{
+  "id": 22,
+  "title": "MongoDB",
+  "aliases": ["MongoDB", "Mongo", "文档数据库", "NoSQL"],
+  "category": "开发工具",
+  "tags": ["NoSQL", "文档数据库", "JSON", "分布式", "聚合管道", "MongoDB Atlas"],
+  "abstract": "MongoDB 是领先的 NoSQL 文档数据库，采用灵活的 JSON 类似文档模型，为现代应用程序提供高性能、高可用和易扩展的数据存储方案，是 NoSQL 领域最具代表性的产品之一。",
+  "thumb": "",
+  "infobox": {
+    "软件名称": "MongoDB",
+    "开发商": "MongoDB, Inc.",
+    "首次发布": "2009年",
+    "数据模型": "BSON 文档（类 JSON）",
+    "开源协议": "SSPL（服务器端公共许可证）",
+    "托管服务": "MongoDB Atlas",
+    "上市状态": "2017年于纳斯达克上市（MDB）"
+  },
+  "content": [
+    { "type": "paragraph", "text": "MongoDB 是领先的 NoSQL 文档数据库，采用灵活的、类似 JSON 的文档模型存储数据。它由 MongoDB, Inc.（前身 10gen）于 2009 年首次发布，专为现代应用程序设计，提供高性能、高可用和易扩展的数据存储方案。MongoDB 是 NoSQL 领域最具代表性的产品之一，在全球拥有数百万开发者用户。" },
+    { "type": "subtitle", "text": "诞生背景" },
+    { "type": "paragraph", "text": "MongoDB 的诞生与云计算和敏捷开发的兴起密切相关。2000 年代后期，互联网应用的迭代速度大幅加快，传统关系型数据库（RDBMS）的严格模式（Schema）成为开发瓶颈——每次需求变更都需要执行 ALTER TABLE 迁移，且难以适应半结构化和嵌套数据。MongoDB 的创始团队意识到，开发者需要一种\"无模式\"（Schema-less）的数据库，能够自然地映射面向对象编程语言中的对象结构。这一理念直接催生了 MongoDB 的文档模型。" },
+    { "type": "subtitle", "text": "核心概念" },
+    { "type": "paragraph", "text": "理解 MongoDB 需要掌握几个核心概念。文档（Document）是 MongoDB 的基本数据单元，采用 BSON（Binary JSON）格式存储，支持嵌套结构和数组，类似编程语言中的对象或字典；集合（Collection）是文档的容器，相当于关系数据库中的表，但集合中的文档不需要有相同的结构；数据库（Database）包含多个集合。与传统 RDBMS 的行列模型不同，MongoDB 的文档模型允许将相关数据嵌套存储在单个文档中，减少了跨表 JOIN 的需求。" },
+    { "type": "subtitle", "text": "数据模型优势" },
+    { "type": "paragraph", "text": "MongoDB 的文档模型带来了多重优势。其一是灵活的模式——同一集合中的文档可以有不同的字段，适应快速变化的业务需求；其二是丰富的嵌套——一个文档可以包含数组和子文档，自然地表达一对多关系（如订单及其订单项）；其三是动态查询——MongoDB 支持基于文档内容的丰富查询，包括字段匹配、范围查询、正则表达式、数组查询和地理位置查询。不过，这种灵活性也带来了挑战：缺乏事务约束时容易出现数据不一致，因此开发者需要谨慎设计数据模型。" },
+    { "type": "subtitle", "text": "聚合管道" },
+    { "type": "paragraph", "text": "MongoDB 的聚合管道（Aggregation Pipeline）是其最强大的功能之一。它借鉴了 Unix 管道的思想，允许将数据通过一个由多个阶段（Stage）组成的管道进行处理，每个阶段对数据进行转换和过滤。常见的阶段包括 $match（过滤文档）、$group（分组聚合）、$project（字段投影）、$sort（排序）、$lookup（左外连接）等。聚合管道可以计算统计指标、生成报表、进行数据转换，功能强大到足以替代许多原本需要用 MapReduce 或外部 ETL 工具完成的任务。" },
+    { "type": "subtitle", "text": "高可用与扩展" },
+    { "type": "paragraph", "text": "MongoDB 内置了企业级的复制和分片能力。副本集（Replica Set）由多个 MongoDB 实例组成，其中一个作为主节点处理写入，其余作为从节点复制数据。当主节点故障时，副本集会自动选举新的主节点，实现高可用。分片（Sharding）则是水平扩展方案，将数据分布到多个分片（Shard）上，每个分片可以是独立的副本集。通过分片，MongoDB 理论上可以扩展到无限的数据量和吞吐量，支撑 PB 级数据存储。" },
+    { "type": "subtitle", "text": "MongoDB Atlas 与云时代" },
+    { "type": "paragraph", "text": "MongoDB Atlas 是官方提供的全托管数据库服务，运行在 AWS、Azure 和 Google Cloud 上。它提供一键部署、自动备份、监控告警、全球集群和安全加密等功能，大幅降低了运维门槛。2017 年 MongoDB 在纳斯达克上市，成为 NoSQL 领域的重要标杆。2018 年，MongoDB 将开源协议从 AGPL 改为 SSPL（服务器端公共许可证），引发了关于开源定义的广泛讨论，但并未影响其商业成功——MongoDB Atlas 已成为全球增长最快的数据库云服务之一。" }
+  ],
+  "source_url": "https://www.mongodb.com",
+  "sources": [
+    { "name": "MongoDB 官网", "url": "https://www.mongodb.com" },
+    { "name": "MongoDB 文档", "url": "https://www.mongodb.com/docs" },
+    { "name": "MongoDB Atlas", "url": "https://www.mongodb.com/atlas" }
+  ],
+  "updated": "2026-10-01"
+}

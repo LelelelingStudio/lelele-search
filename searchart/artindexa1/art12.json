@@ -1,0 +1,35 @@
+{
+  "id": 12,
+  "title": "Jira",
+  "aliases": ["Jira", "Jira Software", "项目管理", "敏捷开发"],
+  "category": "开发工具",
+  "tags": ["敏捷", "Scrum", "Kanban", "Atlassian", "缺陷跟踪", "工作流"],
+  "abstract": "Jira 是 Atlassian 公司开发的敏捷项目管理工具，最初是纯粹的 Bug 跟踪系统，现已发展为支持 Scrum 和 Kanban 的全方位敏捷平台，全球超过 65000 家公司使用。",
+  "thumb": "https://wac-cdn.atlassian.com/misc-assets/webp-images/jira-software-icon-blue.svg",
+  "infobox": {
+    "软件名称": "Jira Software",
+    "所属公司": "Atlassian",
+    "首次发布": "2002年",
+    "平台": "Web、iOS、Android",
+    "用户数": "超过 65000 家公司",
+    "名称由来": "Gojira（哥斯拉）的缩写",
+    "核心方法": "Scrum、Kanban"
+  },
+  "content": [
+    { "type": "paragraph", "text": "Jira 由澳大利亚 Atlassian 公司于 2002 年发布，最初是纯粹的 Bug 跟踪和缺陷管理系统。其名称截取自日语\"Gojira\"（哥斯拉），寓意\"巨型怪兽级\"的问题追踪能力。如今 Jira 已发展为敏捷项目管理平台，支持 Scrum 和 Kanban 两种敏捷方法，提供看板视图、冲刺（Sprint）规划、用户故事地图和自定义工作流等丰富功能。" },
+    { "type": "subtitle", "text": "核心概念" },
+    { "type": "paragraph", "text": "Jira 的工作单元是\"问题\"（Issue），它可以代表一个 Bug、一个用户故事（User Story）、一个任务（Task）、一个史诗（Epic）或一次技术债。每个 Issue 拥有状态、优先级、负责人、 sprint 归属等属性。通过自定义字段和工作流，团队可以将 Jira 适配到几乎任何开发流程中——从简单的\"待办-进行中-完成\"三状态，到包含代码审查、QA 测试、产品验收的复杂多阶段流程。" },
+    { "type": "subtitle", "text": "Scrum 与 Kanban 支持" },
+    { "type": "paragraph", "text": "Jira 对敏捷方法的支持是其核心竞争力。Scrum 团队可以使用冲刺（Sprint）规划面板，将用户故事从产品待办列表（Product Backlog）拉入迭代待办列表（Sprint Backlog），并在冲刺期间通过燃尽图（Burndown Chart）跟踪进度。Kanban 团队则可以使用连续流动的工作流看板，通过 WIP（在制品）限制控制并行任务数量，并用累积流图（Cumulative Flow Diagram）分析瓶颈。" },
+    { "type": "subtitle", "text": "生态集成" },
+    { "type": "paragraph", "text": "作为 Atlassian 生态的核心产品，Jira 与 Confluence（知识库）、Bitbucket（代码仓库）、Bamboo（持续集成）等产品深度集成。此外，Jira 拥有数千款第三方插件，涵盖 GitHub、GitLab、Slack、Figma 等主流工具。其自动化规则（Automation Rules）功能允许用户通过无代码方式定义触发条件和执行动作，如\"当 Bug 被修复时自动通知报告人\"，大幅减少重复性管理操作。" },
+    { "type": "subtitle", "text": "争议与替代方案" },
+    { "type": "paragraph", "text": "尽管 Jira 功能强大，但其在开发者社区中一直存在争议。批评者认为 Jira 配置复杂、界面臃肿，过度强调流程反而拖慢了开发节奏。近年来，Linear、Shortcut（原 Clubhouse）、Azure DevOps 等轻量级替代方案崛起，试图在敏捷管理的灵活性与简洁性之间找到更好的平衡。不过，凭借 Atlassian 强大的企业客户基础和丰富的集成生态，Jira 仍是中大型企业项目管理的事实标准。" }
+  ],
+  "source_url": "https://www.atlassian.com/software/jira",
+  "sources": [
+    { "name": "Atlassian Jira 官网", "url": "https://www.atlassian.com/software/jira" },
+    { "name": "Atlassian 公司介绍", "url": "https://www.atlassian.com/company" }
+  ],
+  "updated": "2026-10-01"
+}

@@ -1,0 +1,38 @@
+{
+  "id": 16,
+  "title": "Kubernetes",
+  "aliases": ["K8s", "Kubernetes", "K8s集群", "容器编排"],
+  "category": "开发工具",
+  "tags": ["容器编排", "云原生", "CNCF", "Docker", "微服务", "自动伸缩"],
+  "abstract": "Kubernetes（简称 K8s）是谷歌开源的容器编排平台，用于自动化应用容器的部署、扩展和管理，已成为云原生生态的核心支柱和事实标准。",
+  "thumb": "",
+  "infobox": {
+    "软件名称": "Kubernetes",
+    "别名": "K8s",
+    "开发商": "Google（基于 Borg 系统）",
+    "首次发布": "2014年6月",
+    "开源协议": "Apache 2.0",
+    "托管组织": "CNCF（云原生计算基金会）",
+    "命名含义": "希腊语\"舵手\"，数字8代表 k 与 s 之间的字母数"
+  },
+  "content": [
+    { "type": "paragraph", "text": "Kubernetes（简称 K8s）是谷歌开源的容器编排平台，用于自动化应用容器的部署、扩展和管理。它于 2014 年 6 月正式开源，名称源自希腊语\"舵手\"，数字 8 代表单词中 k 与 s 之间的 8 个字母。Kubernetes 已成为云原生生态的核心支柱，被全球几乎所有主流云厂商和科技企业采用。" },
+    { "type": "subtitle", "text": "技术起源" },
+    { "type": "paragraph", "text": "Kubernetes 的设计源于 Google 内部运行了十余年的大规模集群管理系统 Borg。Borg 管理着 Google 全球数以万计的机器和数十亿个容器，是 Google 基础设施的核心秘密武器。2013 年 Docker 引爆容器化浪潮后，Google 意识到需要一个开源的容器编排标准来统一市场，于是将 Borg 的核心设计理念提炼出来，用 Go 语言重写并开源，这就是 Kubernetes。这一决策直接奠定了容器编排领域的标准格局。" },
+    { "type": "subtitle", "text": "核心架构" },
+    { "type": "paragraph", "text": "Kubernetes 采用主从架构。控制平面（Control Plane）包含 API Server（集群的统一入口）、etcd（分布式键值存储，保存集群状态）、Scheduler（调度器，将 Pod 分配到合适节点）、Controller Manager（运行各种控制器，如副本控制器、节点控制器）等核心组件。工作节点（Node）则运行 kubelet（与 API Server 通信的代理）、kube-proxy（网络代理）和容器运行时（如 containerd、CRI-O）。这种松耦合、声明式的架构使 Kubernetes 具备极强的扩展性和容错能力。" },
+    { "type": "subtitle", "text": "核心概念" },
+    { "type": "paragraph", "text": "理解 Kubernetes 需要掌握几个核心抽象。Pod 是最小的部署单元，包含一个或多个紧密关联的容器，共享网络命名空间和存储卷；Service 为 Pod 提供稳定的网络入口和负载均衡；Deployment 定义 Pod 的期望状态（副本数、镜像版本），控制器会自动维持该状态；ConfigMap 和 Secret 用于管理配置和敏感信息；Namespace 提供逻辑隔离。这些原语组合起来，可以描述几乎任何复杂的分布式应用拓扑。" },
+    { "type": "subtitle", "text": "生态系统" },
+    { "type": "paragraph", "text": "Kubernetes 催生了庞大的云原生生态，由 CNCF（云原生计算基金会）统一治理。围绕 K8s 涌现出服务网格（Istio、Linkerd）、包管理（Helm）、监控（Prometheus、Grafana）、日志（Fluentd、Loki）、持续交付（Argo CD、Flux）、无服务器（Knative）等一整套工具链。2025 年 CNCF  Landscape 已收录超过 2000 个项目，构成了现代云原生技术栈的完整图景。" },
+    { "type": "subtitle", "text": "托管服务与商业格局" },
+    { "type": "paragraph", "text": "主流云厂商均提供托管 Kubernetes 服务，大幅降低了运维门槛：Google 有 GKE（Google Kubernetes Engine），亚马逊有 EKS（Elastic Kubernetes Service），微软有 AKS（Azure Kubernetes Service），腾讯云有 TKE，阿里云有 ACK。这些托管服务自动处理控制平面的高可用和升级，用户只需管理工作节点。Kubernetes 的成功也带动了 Red Hat OpenShift、Rancher 等商业发行版的繁荣，成为企业数字化转型的核心基础设施。" }
+  ],
+  "source_url": "https://kubernetes.io",
+  "sources": [
+    { "name": "Kubernetes 官网", "url": "https://kubernetes.io" },
+    { "name": "CNCF 云原生计算基金会", "url": "https://www.cncf.io" },
+    { "name": "Kubernetes GitHub", "url": "https://github.com/kubernetes/kubernetes" }
+  ],
+  "updated": "2026-10-01"
+}

@@ -1,0 +1,39 @@
+{
+  "id": 23,
+  "title": "WordPress",
+  "aliases": ["WordPress", "WP", "内容管理系统", "CMS"],
+  "category": "工具",
+  "tags": ["CMS", "博客", "PHP", "开源", "网站建设", "插件生态"],
+  "abstract": "WordPress 是全球最流行的开源内容管理系统（CMS），以 PHP 和 MySQL 构建，支撑着全球超过 40% 的网站，从个人博客到大型新闻门户均可胜任。",
+  "thumb": "",
+  "infobox": {
+    "软件名称": "WordPress",
+    "开发商": "WordPress 基金会",
+    "首次发布": "2003年5月27日",
+    "编程语言": "PHP",
+    "数据库": "MySQL / MariaDB",
+    "开源协议": "GPLv2",
+    "市场份额": "全球 CMS 市场超过 60%",
+    "网站占比": "全球所有网站的 40% 以上"
+  },
+  "content": [
+    { "type": "paragraph", "text": "WordPress 是全球最流行的开源内容管理系统（CMS），以 PHP 和 MySQL 构建，于 2003 年 5 月 27 日首次发布。它最初是一个简单的博客工具，如今已演变为功能完备的网站构建平台，支撑着全球超过 40% 的网站——从个人博客、企业官网到大型新闻门户、电子商务网站均可胜任。WordPress 的成功证明了开源软件的巨大潜力。" },
+    { "type": "subtitle", "text": "诞生故事" },
+    { "type": "paragraph", "text": "WordPress 的故事始于一个被放弃的项目。2003 年，Matt Mullenweg 和 Mike Little 基于当时已经停止开发的博客工具 b2/cafelog 创建了一个分支，这就是 WordPress 的起点。项目以 GPL 协议开源，强调\"代码即诗歌\"（Code is Poetry）的理念。Mullenweg 随后创立了 Automattic 公司，负责 WordPress.com（托管服务）和相关产品的商业化运营，而 WordPress.org 的开源项目则由 WordPress 基金会管理。这种\"开源核心 + 商业托管\"的双轨模式成为 WordPress 持续成功的基石。" },
+    { "type": "subtitle", "text": "核心特性" },
+    { "type": "paragraph", "text": "WordPress 的核心特性包括：主题系统——用户可以通过更换主题完全改变网站的外观，无需修改核心代码；插件架构——通过插件扩展功能，从 SEO 优化、缓存加速到表单构建、会员系统无所不包；区块编辑器（Gutenberg）——2018 年引入的现代编辑体验，采用区块（Block）概念组织内容，支持拖拽排版和实时预览；多用户与权限——内置角色和权限系统，支持作者、编辑、管理员等多级协作。这些特性使 WordPress 既适合技术小白，也能满足专业开发者的深度定制需求。" },
+    { "type": "subtitle", "text": "插件与主题生态" },
+    { "type": "paragraph", "text": "WordPress 的繁荣离不开其庞大的插件和主题生态。官方插件目录收录了超过 60,000 个免费插件，主题目录也有数千款免费主题。在商业市场，Elementor、Divi、WooCommerce、Yoast SEO、ACF（Advanced Custom Fields）等产品构建了数十亿美元的生态系统。其中 WooCommerce 是 WordPress 最重要的插件之一，将其转变为功能完备的电子商务平台，全球超过 500 万家在线商店基于 WooCommerce 运营。" },
+    { "type": "subtitle", "text": "Gutenberg 与区块编辑" },
+    { "type": "paragraph", "text": "2018 年 WordPress 5.0 引入的 Gutenberg 编辑器是项目发展史上的重大转折点。它用基于 React 构建的区块编辑器取代了运行了 14 年的经典 TinyMCE 编辑器。Gutenberg 将内容拆分为可独立编辑、样式化的区块，支持布局、按钮、图库、嵌入等各类元素，并通过\"区块模式\"（Block Patterns）和\"全站编辑\"（Full Site Editing）逐步实现整站的可视化编辑。这一变革让 WordPress 从\"博客工具\"进化为\"网站构建平台\"。" },
+    { "type": "subtitle", "text": "影响力与争议" },
+    { "type": "paragraph", "text": "WordPress 的影响力毋庸置疑——全球 CMS 市场份额超过 60%，所有网站的 40% 以上运行在 WordPress 上。然而，它也面临一些争议：历史包袱导致代码库复杂、性能问题需要依赖缓存插件解决、安全漏洞多因第三方插件引入、更新兼容性问题时有发生。近年来，静态站点生成器（如 Hugo、Jekyll）、无头 CMS（如 Contentful、Strapi）和现代网站构建工具（如 Webflow、Framer）对 WordPress 构成了挑战。不过，凭借庞大的用户基数、成熟的生态和持续的技术演进，WordPress 在未来相当长的时间内仍将是最重要的网站构建工具之一。" }
+  ],
+  "source_url": "https://wordpress.org",
+  "sources": [
+    { "name": "WordPress 官网", "url": "https://wordpress.org" },
+    { "name": "WordPress 插件目录", "url": "https://wordpress.org/plugins/" },
+    { "name": "WordPress.com（托管服务）", "url": "https://wordpress.com" }
+  ],
+  "updated": "2026-10-01"
+}

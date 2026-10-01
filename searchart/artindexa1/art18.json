@@ -1,0 +1,40 @@
+{
+  "id": 18,
+  "title": "Git",
+  "aliases": ["Git", "版本控制", "分布式版本控制系统"],
+  "category": "开发工具",
+  "tags": ["版本控制", "分布式", "Linus Torvalds", "开源", "GitHub", "协作"],
+  "abstract": "Git 是 Linus Torvalds 创建的分布式版本控制系统，以其速度、数据完整性和非线性分支支持成为现代软件开发的事实标准，支撑着全球数千万开发者的日常协作。",
+  "thumb": "",
+  "infobox": {
+    "软件名称": "Git",
+    "开发者": "Linus Torvalds",
+    "首次发布": "2005年",
+    "编程语言": "C、Shell、Perl",
+    "开源协议": "GPLv2",
+    "名称含义": "Linus 的自嘲命名（\"愚蠢的内容跟踪器\"）",
+    "衍生平台": "GitHub、GitLab、Bitbucket"
+  },
+  "content": [
+    { "type": "paragraph", "text": "Git 是 Linus Torvalds 于 2005 年创建的分布式版本控制系统，用于在软件开发过程中跟踪文件变更、协调多人协作。它以惊人的速度、对数据完整性的严格保证和强大的非线性分支管理能力著称，已成为现代软件开发的事实标准。几乎所有专业开发者每天都在使用 Git，它是整个开源生态和现代软件工程的基石。" },
+    { "type": "subtitle", "text": "诞生故事" },
+    { "type": "paragraph", "text": "Git 的诞生与 Linux 内核开发密切相关。2005 年之前，Linux 内核社区使用 BitKeeper 作为版本控制工具。当年 BitKeeper 的商业公司收回了对 Linux 社区的免费使用权，Linus Torvalds 决定自己开发一个替代工具。他花了十天时间写出了 Git 的核心，此后社区迅速接手完善。Linus 曾戏称 Git 是\"愚蠢的内容跟踪器\"（the stupid content tracker），这个自嘲的名字却成为了史上最成功的版本控制系统。" },
+    { "type": "subtitle", "text": "分布式架构" },
+    { "type": "paragraph", "text": "Git 最革命性的设计是分布式架构。与集中式版本控制系统（如 SVN、CVS）不同，Git 中每个开发者的本地仓库都是完整的——包含全部历史记录和版本数据。这意味着开发者可以在离线状态下完成提交、分支、合并等几乎所有操作，只有在需要同步时才与远程仓库通信。这种架构不仅提升了速度，还天然具备容灾能力——任何一个克隆（Clone）都可作为完整备份。" },
+    { "type": "subtitle", "text": "核心概念" },
+    { "type": "paragraph", "text": "理解 Git 需要掌握几个核心概念。仓库（Repository）是项目的版本库；工作区（Working Directory）是当前检出的文件；暂存区（Staging Area / Index）是下次提交的内容快照；提交（Commit）是版本库的不可变快照，通过 SHA-1 哈希唯一标识；分支（Branch）是指向某个提交的轻量级指针；合并（Merge）和变基（Rebase）是整合分支变更的两种方式。Git 内部将文件内容存储为\"blob\"对象，通过有向无环图（DAG）组织提交历史，这种设计确保了数据的完整性和高效性。" },
+    { "type": "subtitle", "text": "分支模型与工作流" },
+    { "type": "paragraph", "text": "Git 的分支机制极其轻量——创建一个分支本质上只是创建一个 41 字节的文件。这让\"分支一切\"的开发模式成为可能。业界形成了多种成熟的工作流模型：Git Flow 定义了严格的分支角色（master、develop、feature、release、hotfix）；GitHub Flow 则推崇更简单的\"主分支 + 功能分支 + Pull Request\"模式；GitLab Flow 在两者之间取得了平衡。这些工作流配合代码审查（Code Review），构成了现代软件工程的质量保障体系。" },
+    { "type": "subtitle", "text": "平台生态" },
+    { "type": "paragraph", "text": "Git 本身只是工具，真正改变软件开发方式的是围绕它建立的平台生态。GitHub 于 2008 年上线，将 Git 与社交化协作结合，成为全球最大的开源社区；GitLab 提供一体化的 DevOps 平台；Bitbucket 则深度集成 Atlassian 工具链。这些平台在 Git 的基础上增加了 Issues、Pull/Merge Request、CI/CD、项目管理等功能，使 Git 从单纯的版本控制工具进化为完整的软件协作平台。" },
+    { "type": "subtitle", "text": "影响力" },
+    { "type": "paragraph", "text": "Git 的影响力远超技术范畴。它改变了软件行业的协作方式，使得开源运动能够以前所未有的规模组织起来。据统计，全球有超过 1 亿开发者在使用 Git，仅 GitHub 上就有超过 4 亿个代码仓库。Git 的设计哲学——分布式、不可变、内容寻址——也深刻影响了后续无数系统和工具的架构设计。" }
+  ],
+  "source_url": "https://git-scm.com",
+  "sources": [
+    { "name": "Git 官方文档", "url": "https://git-scm.com" },
+    { "name": "Pro Git 中文版", "url": "https://git-scm.com/book/zh/v2" },
+    { "name": "GitHub", "url": "https://github.com" }
+  ],
+  "updated": "2026-10-01"
+}

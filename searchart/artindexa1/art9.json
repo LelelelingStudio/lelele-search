@@ -1,0 +1,37 @@
+{
+  "id": 9,
+  "title": "Figma",
+  "aliases": ["Figma", "设计协作", "UI设计", "云端设计工具"],
+  "category": "设计",
+  "tags": ["UI设计", "UX设计", "实时协作", "原型", "Web端", "上市公司"],
+  "abstract": "Figma 是领先的云端实时协作设计工具，以浏览器为运行环境，涵盖 UI/UX 设计、交互原型和 FigJam 白板功能，2025 年已在纽交所上市。",
+  "thumb": "https://cdn.sanity.io/images/599r6htc/regionalized/5094051dac77593d0ea0970bdcbabaf79e6b3e3f-2400x1260.png",
+  "infobox": {
+    "公司名称": "Figma",
+    "成立时间": "2012年",
+    "创始人": "Dylan Field",
+    "平台": "Web、macOS、Windows",
+    "上市状态": "2025年8月于纽交所上市",
+    "月活用户": "超过 1300 万",
+    "核心产品": "Figma Design、FigJam、Dev Mode"
+  },
+  "content": [
+    { "type": "paragraph", "text": "Figma 由 Dylan Field 于 2012 年创立，是全球首款真正实现多人实时协作的 UI 设计工具。与传统设计软件不同，Figma 完全运行在浏览器中，无需安装任何客户端，设计师只需打开网页即可开始工作，并支持多人同时编辑同一文件，实时看到彼此的光标和改动。这一特性彻底改变了设计团队的协作方式。" },
+    { "type": "subtitle", "text": "发展历程" },
+    { "type": "paragraph", "text": "Figma 的诞生源于 Dylan Field 的一个大胆设想：能否用浏览器取代 Sketch 和 Photoshop？2015 年 Figma 推出首个公测版本，最初并未引起广泛关注。随着实时协作功能的完善和性能的不断优化，Figma 逐渐在设计师群体中积累口碑。2019 年后，远程办公的兴起让 Figma 的云端协作优势被无限放大，其用户量呈指数级增长。2022 年，Adobe 宣布以 200 亿美元收购 Figma，但这笔交易在 2023 年底被英国监管机构否决，Figma 因此保留了独立身份。2025 年 8 月，Figma 成功在纽交所上市，成为设计工具领域的重要里程碑。" },
+    { "type": "subtitle", "text": "核心功能" },
+    { "type": "paragraph", "text": "Figma 的核心功能涵盖设计的全生命周期。矢量编辑工具支持钢笔、布尔运算、自动布局（Auto Layout）等高级特性；组件（Component）和变体（Variant）系统让设计系统得以规模化复用；原型（Prototype）模式允许设计师在画布内直接定义页面跳转、交互动画和过渡效果，无需切换到其他工具；Dev Mode 则为开发者提供精确的标注、代码片段和资产导出，弥合了设计与开发之间的鸿沟。" },
+    { "type": "subtitle", "text": "FigJam 与白板协作" },
+    { "type": "paragraph", "text": "2021 年 Figma 推出了 FigJam，一款专为头脑风暴和团队讨论设计的在线白板工具。FigJam 提供便签、画笔、流程图、投票插件等丰富的协作元素，支持数百人同时在画布上工作。它填补了设计前期需求梳理和创意发散阶段的工具空白，成为 Figma 产品矩阵的重要补充，与 Miro、Mural 等白板工具展开直接竞争。" },
+    { "type": "subtitle", "text": "设计系统生态" },
+    { "type": "paragraph", "text": "Figma 社区（Figma Community）是其生态的核心亮点。设计师可以在社区中分享、复用和 remix 各种设计文件、UI 套件、图标和插件。社区中已经沉淀了 Material Design、Apple Human Interface Guidelines 等主流设计系统的官方资源。此外，Figma 拥有超过 1000 个第三方插件，覆盖图标生成、内容填充、无障碍检查、设计标注等各类场景，极大扩展了工具的可能性。" },
+    { "type": "subtitle", "text": "行业影响" },
+    { "type": "paragraph", "text": "Figma 的出现终结了设计工具\"一人一文件\"的孤岛时代。它的实时协作模式被后续大量工具模仿，推动了整个设计行业向云端化、协作化转型。据公开数据，财富 500 强企业中超过 95% 正在使用 Figma，其月活用户已突破 1300 万。Figma 还与 Anthropic 等 AI 公司合作，将生成式 AI 能力引入设计流程，让设计师可以用自然语言生成界面元素。" }
+  ],
+  "source_url": "https://www.figma.com",
+  "sources": [
+    { "name": "Figma 官网", "url": "https://www.figma.com" },
+    { "name": "Figma Community", "url": "https://www.figma.com/community" }
+  ],
+  "updated": "2026-10-01"
+}

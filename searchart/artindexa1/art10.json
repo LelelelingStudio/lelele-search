@@ -1,0 +1,37 @@
+{
+  "id": 10,
+  "title": "Notion",
+  "aliases": ["Notion", "笔记", "知识库", "工作空间"],
+  "category": "工具",
+  "tags": ["笔记", "知识管理", "数据库", "协作", "All-in-One", "Notion AI"],
+  "abstract": "Notion 是一款整合笔记、任务、数据库和团队协作的全平台工作空间应用，以独特的\"块编辑器\"理念让一切内容皆可拖拽和嵌套，全球用户近 1 亿。",
+  "thumb": "https://www.notion.so/cdn-cgi/image/format=auto,width=3840,quality=100/front-static/pages/product/super-duper/hero-illo.png",
+  "infobox": {
+    "软件名称": "Notion",
+    "开发商": "Notion Labs, Inc.",
+    "成立时间": "2013年",
+    "创始人": "Ivan Zhao",
+    "平台": "Web、macOS、Windows、iOS、Android",
+    "用户数": "近 1 亿",
+    "核心概念": "块（Block）编辑器、多维数据库"
+  },
+  "content": [
+    { "type": "paragraph", "text": "Notion 由 Ivan Zhao 于 2013 年创立，是一款旨在\"替代一切\"的 All-in-One 工作空间应用。它的核心创新是\"块\"（Block）概念——文本、标题、待办、表格、图片、代码块、嵌入内容等一切元素都是平等的块，可以自由拖拽、嵌套、转换和引用。这种极致灵活的编辑模型让 Notion 既可以是一篇简单笔记，也可以是一套复杂的项目管理系统。" },
+    { "type": "subtitle", "text": "发展历程" },
+    { "type": "paragraph", "text": "Notion 的发展并非一帆风顺。2016 年，由于早期架构问题，Ivan Zhao 曾一度考虑关闭公司。团队决定用一种全新的技术栈（ClojureScript + Datalog 数据库）重写整个产品，这次\"壮士断腕\"式的重构最终成就了 Notion 的独特性。2018 年 Notion 2.0 发布，引入了关系型数据库功能，产品口碑迅速发酵。2020 年疫情期间，Notion 用户从 100 万激增至 400 万，随后持续增长至 2024 年突破 1 亿用户。" },
+    { "type": "subtitle", "text": "核心功能" },
+    { "type": "paragraph", "text": "Notion 的核心能力可以概括为三个层次。第一层是块编辑器，支持文本、标题、待办、引用、代码、分割线、Toggle 等数十种块类型，所有块可拖拽排序和嵌套；第二层是数据库（Database），支持表格、看板、画廊、日历、时间线五种视图，同一份数据可通过不同视图呈现，还支持关系（Relation）和回链（Backlink）；第三层是模板系统和 Notion AI，前者让用户可以一键复用成熟的工作流程，后者则提供 AI 写作、摘要、翻译和问答能力。" },
+    { "type": "subtitle", "text": "应用场景" },
+    { "type": "paragraph", "text": "Notion 的灵活性使其应用场景极其广泛。个人用户用它做笔记、日记、读书清单和习惯追踪；团队用它做项目管理、会议纪要、产品需求文档（PRD）和 OKR 看板；教育者用它搭建课程大纲和教学资源库；创作者用它运营内容日历和粉丝社群。Notion 还推出了 Notion Sites，允许用户将工作空间一键发布为公开网站，进一步拓展了使用边界。" },
+    { "type": "subtitle", "text": "Notion AI 与生态" },
+    { "type": "paragraph", "text": "2023 年 Notion 推出 Notion AI，集成 AI 写作、自动摘要、翻译和问答功能，用户可以直接在工作空间中与 AI 对话。2026 年，Notion 进一步集成了国产开源模型 MiniMax M2.5，构建混合 AI 架构，在保证响应速度的同时降低推理成本。此外，Notion 拥有活跃的模板社区，用户可以分享和销售自己的模板，形成了独特的创作者经济生态。" },
+    { "type": "subtitle", "text": "商业模式" },
+    { "type": "paragraph", "text": "Notion 采用 Freemium 模式，个人用户可免费使用大部分功能，付费版则提供更大的上传容量、版本历史和高级权限控制。企业版面向大型组织，提供 SAML SSO、私有工作空间和审计日志等安全特性。2021 年 Notion 完成 2.75 亿美元融资，估值达到 103 亿美元，成为估值最高的生产力工具初创公司之一。" }
+  ],
+  "source_url": "https://www.notion.so",
+  "sources": [
+    { "name": "Notion 官网", "url": "https://www.notion.so" },
+    { "name": "Notion AI", "url": "https://www.notion.so/product/ai" }
+  ],
+  "updated": "2026-10-01"
+}

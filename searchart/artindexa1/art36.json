@@ -1,0 +1,36 @@
+{
+  "id": 36,
+  "title": "Netflix",
+  "aliases": ["Netflix", "网飞", "奈飞", "流媒体"],
+  "category": "娱乐",
+  "tags": ["流媒体", "在线影视", "原创内容", "全球化", "订阅制"],
+  "abstract": "Netflix 是全球领先的流媒体娱乐服务公司，提供海量电影、电视剧、纪录片和原创内容，彻底颠覆了家庭娱乐行业，全球付费订阅用户超过 2.8 亿。",
+  "thumb": "",
+  "infobox": {
+    "公司名称": "Netflix, Inc.",
+    "成立时间": "1997年",
+    "总部地点": "美国加利福尼亚州洛斯盖图",
+    "创始人": "Reed Hastings、Marc Randolph",
+    "上市时间": "2002年（NASDAQ: NFLX）",
+    "付费订阅用户": "超过 2.8 亿",
+    "运营范围": "190 多个国家和地区"
+  },
+  "content": [
+    { "type": "paragraph", "text": "Netflix 由里德·哈斯廷斯（Reed Hastings）和马克·兰道夫（Marc Randolph）于 1997 年创立，最初是一家在线 DVD 租赁服务商。2007 年，Netflix 率先推出在线流媒体服务，让订阅用户可以在电脑上即时观看电影和电视剧，这一变革性的举措彻底颠覆了家庭娱乐行业，并导致传统的录像带和 DVD 租赁店（如 Blockbuster）迅速消亡。" },
+    { "type": "image", "src": "https://help.nflxext.com/0af6ce3e-b27a-4722-a5f0-e32af4df105d_what_is_netflix_5_en.png", "caption": "Netflix 支持在各种设备上观看" },
+    { "type": "subtitle", "text": "内容为王与全球化" },
+    { "type": "paragraph", "text": "2012 年，Netflix 开始投入巨资制作原创内容，首部原创剧集《莉莉海默》之后，便推出了风靡全球的政治惊悚剧《纸牌屋》，奠定了其\"内容为王\"的霸主地位。此后，《怪奇物语》《鱿鱼游戏》《星期三》等原创剧集不断刷新收视纪录。截至 2025 年，Netflix 已在 190 多个国家运营，全球付费订阅用户超过 2.8 亿，是流媒体行业无可争议的领头羊。" },
+    { "type": "subtitle", "text": "商业模式演进" },
+    { "type": "paragraph", "text": "Netflix 的商业模式经历了多次演进。从早期的 DVD 邮寄订阅，到流媒体订阅，再到 2022 年推出的含广告订阅层级（Basic with Ads），Netflix 不断探索新的收入来源。2023 年推出的\"付费共享\"（Paid Sharing）政策，通过收取额外费用打击密码共享行为，为公司带来了数百万新增付费用户。这些策略的调整反映了流媒体行业从\"跑马圈地\"到\"精打细算\"的阶段转变。" },
+    { "type": "subtitle", "text": "技术与算法" },
+    { "type": "paragraph", "text": "Netflix 的技术实力同样令人瞩目。其推荐算法每天为超过 2.8 亿用户个性化推荐内容，据估算，推荐系统帮助 Netflix 每年节省了超过 10 亿美元的因用户流失带来的损失。Netflix 还是云计算的早期采用者，是全球最早大规模使用 AWS 的公司之一。此外，Netflix 开源了大量技术工具，如 Chaos Monkey（混沌工程工具）、Eureka（服务发现）、Hystrix（容错框架）等，深刻影响了云原生技术的发展。" },
+    { "type": "subtitle", "text": "竞争格局" },
+    { "type": "paragraph", "text": "流媒体市场竞争日趋激烈。Disney+（迪士尼）、Max（华纳兄弟探索）、Prime Video（亚马逊）、Apple TV+（苹果）等平台纷纷投入巨资争夺用户。传统好莱坞制片厂纷纷收回内容授权，推出自家流媒体服务，迫使 Netflix 更加依赖原创内容。尽管面临挑战，Netflix 凭借先发优势、庞大的内容库和全球化运营经验，仍是流媒体行业的标杆企业。" }
+  ],
+  "source_url": "https://www.netflix.com",
+  "sources": [
+    { "name": "Netflix 官网", "url": "https://www.netflix.com" },
+    { "name": "Netflix 投资者关系", "url": "https://ir.netflix.net" }
+  ],
+  "updated": "2026-10-01"
+}

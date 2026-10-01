@@ -1,0 +1,37 @@
+{
+  "id": 35,
+  "title": "Spotify",
+  "aliases": ["Spotify", "声田", "音乐流媒体"],
+  "category": "娱乐",
+  "tags": ["音乐流媒体", "播客", "算法推荐", "瑞典", "数字音乐"],
+  "abstract": "Spotify 是全球最大的音乐流媒体服务商，提供超过 1 亿首歌曲和数百万播客的在线收听服务，以强大的算法推荐和个性化歌单著称。",
+  "thumb": "",
+  "infobox": {
+    "公司名称": "Spotify",
+    "成立时间": "2006年",
+    "创始人": "Daniel Ek、Martin Lorentzon",
+    "总部": "瑞典斯德哥尔摩",
+    "上市时间": "2018年（NYSE: SPOT）",
+    "付费订阅用户": "超过 2.4 亿",
+    "月活用户": "超过 6.5 亿"
+  },
+  "content": [
+    { "type": "paragraph", "text": "Spotify 是全球最大的音乐流媒体服务商，由 Daniel Ek 和 Martin Lorentzon 于 2006 年在瑞典斯德哥尔摩创立。它提供超过 1 亿首歌曲和数百万播客的在线收听服务，以强大的算法推荐和个性化歌单著称。Spotify 彻底改变了人们消费音乐的方式，从\"购买和拥有\"转变为\"订阅和流式收听\"。" },
+    { "type": "subtitle", "text": "商业模式创新" },
+    { "type": "paragraph", "text": "Spotify 的核心商业模式是\"Freemium\"——免费用户可以通过收听广告的方式免费听音乐，付费订阅用户（Premium）则享受无广告、离线下载、高音质和跳过无限制等特权。这种模式的创新之处在于：免费服务作为用户获取的入口，付费订阅作为收入来源。2018 年 Spotify 在纽交所直接上市（股票代码 SPOT），成为音乐流媒体领域的重要里程碑。截至 2025 年，Spotify 拥有超过 2.4 亿付费订阅用户和 6.5 亿月活用户。" },
+    { "type": "subtitle", "text": "算法推荐引擎" },
+    { "type": "paragraph", "text": "Spotify 最引以为傲的是其算法推荐引擎。核心产品包括：Discover Weekly（每周发现）——每周为用户生成 30 首个性化推荐歌曲，自 2015 年推出以来成为用户最爱的功能；Release Radar（新歌雷达）——推送用户关注的艺人的最新作品；Daily Mix（每日混音）——根据用户听歌习惯生成多个风格的歌单；Year in Review（年度回顾）——每年年末生成用户的听歌数据报告。这些功能背后的技术涉及协同过滤、自然语言处理和音频特征分析（通过分析歌曲的节奏、调性、响度等特征进行推荐）。" },
+    { "type": "subtitle", "text": "播客战略" },
+    { "type": "paragraph", "text": "2019 年起，Spotify 开始大力布局播客业务，先后以数亿美元收购了播客制作公司 Gimlet Media、 Anchor（播客创作平台）和 Parcast，并以超过 2 亿美元签下 Joe Rogan 的独家播客节目。这些投资使 Spotify 从纯音乐平台转型为音频综合平台。尽管早期投入巨大且引发了一些亏损争议，但播客已成为 Spotify 用户增长和留存的重要驱动力，也为平台打开了广告收入的新增长空间。" },
+    { "type": "subtitle", "text": "技术与音质" },
+    { "type": "paragraph", "text": "Spotify 在技术层面持续创新。其流媒体技术采用了自适应比特率（Adaptive Bitrate）技术，根据用户的网络状况动态调整音质，保证流畅播放。音质方面，免费用户为 160 kbps，Premium 用户为 320 kbps。2021 年 Spotify 推出 HiFi（无损音质）功能的预告，但正式上线时间一再推迟，最终以 Spotify Premium \"Lossless\"的形式在部分市场推出。此外，Spotify 还推出了 Car Thing（车载设备）、Spotify Connect（跨设备无缝切换）等硬件和生态产品。" },
+    { "type": "subtitle", "text": "竞争格局" },
+    { "type": "paragraph", "text": "在音乐流媒体市场，Spotify 面临多方竞争。Apple Music 凭借苹果设备的深度集成占据重要份额；YouTube Music 依托 YouTube 的海量音乐视频内容吸引用户；Amazon Music 通过 Prime 会员体系捆绑推广。在中国市场，QQ 音乐、网易云音乐等本土平台占据主导。尽管如此，Spotify 凭借先发优势、强大的推荐算法和全球化的内容生态，仍是全球音乐流媒体的领军者。" }
+  ],
+  "source_url": "https://www.spotify.com",
+  "sources": [
+    { "name": "Spotify 官网", "url": "https://www.spotify.com" },
+    { "name": "Spotify 投资者关系", "url": "https://investors.spotify.com" }
+  ],
+  "updated": "2026-10-01"
+}

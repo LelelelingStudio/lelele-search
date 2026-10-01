@@ -1,0 +1,39 @@
+{
+  "id": 20,
+  "title": "Unity",
+  "aliases": ["Unity", "Unity3D", "Unity引擎"],
+  "category": "游戏",
+  "tags": ["游戏引擎", "实时3D", "C#", "跨平台", "AR/VR", "游戏开发"],
+  "abstract": "Unity 是全球领先的实时 3D 开发平台，为游戏、影视、建筑可视化、汽车和工业等领域提供跨平台的创作和运行能力，是全球使用最广泛的游戏引擎之一。",
+  "thumb": "",
+  "infobox": {
+    "软件名称": "Unity",
+    "开发商": "Unity Technologies",
+    "首次发布": "2005年",
+    "编程语言": "C#",
+    "支持平台": "Windows、macOS、iOS、Android、PlayStation、Xbox、Switch、WebGL 等 20+",
+    "上市状态": "2020年于纽交所上市（NYSE: U）",
+    "核心能力": "实时 3D、跨平台部署、AR/VR 支持"
+  },
+  "content": [
+    { "type": "paragraph", "text": "Unity 是全球领先的实时 3D 开发平台，于 2005 年首次发布。它最初定位为游戏引擎，如今已扩展到影视动画、建筑可视化、汽车设计、工业仿真、医疗培训等众多领域。Unity 以易用性、跨平台能力和庞大的资产商店著称，是全球使用最广泛的游戏引擎之一，尤其在移动游戏和独立游戏领域占据主导地位。" },
+    { "type": "subtitle", "text": "发展历程" },
+    { "type": "paragraph", "text": "Unity 由 David Helgason、Nicholas Francis 和 Joachim Ante 于 2004 年在丹麦哥本哈根创立。三人最初的目标是打造一款\"人人都能用的游戏引擎\"。2005 年 Unity 1.0 在苹果全球开发者大会（WWDC）上发布，是首个面向 macOS 的游戏开发工具。2010 年 Unity 开始支持 iOS，恰好赶上移动游戏爆发的风口，迅速成为移动游戏开发的首选引擎。2018 年 Unity 宣布支持中文界面，加速了中国市场的渗透。2020 年，Unity 在纽交所上市，股票代码为 U。" },
+    { "type": "subtitle", "text": "技术架构" },
+    { "type": "paragraph", "text": "Unity 的核心架构围绕几个关键系统展开。编辑器（Editor）是开发者创作内容的集成环境，提供场景视图、游戏视图、层级面板、检视面板等可视化工具；MonoBehaviour 是游戏逻辑的基类，开发者通过继承和覆写其生命周期方法（如 Start、Update、FixedUpdate）来控制游戏对象的行为；物理引擎（PhysX）负责刚体、碰撞和布料模拟；渲染管线（URP、HDRP、HDRP）则负责将 3D 场景绘制到屏幕。Unity 使用 C# 作为脚本语言，基于 Mono 或 IL2CPP 运行时执行。" },
+    { "type": "subtitle", "text": "跨平台能力" },
+    { "type": "paragraph", "text": "Unity 最引以为傲的是其跨平台能力。开发者只需编写一次代码，即可将项目部署到超过 20 个平台，包括 Windows、macOS、Linux、iOS、Android、PlayStation、Xbox、Nintendo Switch、WebGL，以及 AR/VR 平台（Meta Quest、Hololens、Magic Leap）。Unity 通过 IL2CPP（Intermediate Language To C++）技术将 C# 代码转换为 C++ 再编译为各平台原生代码，兼顾了开发效率和运行性能。" },
+    { "type": "subtitle", "text": "Asset Store 与生态" },
+    { "type": "paragraph", "text": "Unity Asset Store 是全球最大的游戏资产市场之一，提供数以万计的角色模型、环境素材、音效、脚本插件、着色器和完整项目模板。开发者可以直接购买或免费获取这些资源，大幅缩短开发周期。著名的资产包括 PlayMaker（可视化脚本）、Cinemachine（智能相机系统）、Bolt（可视化编程）等。Asset Store 形成了独特的内容创作者经济，让美术、音效和程序资源得以自由流通。" },
+    { "type": "subtitle", "text": "经典作品与影响力" },
+    { "type": "paragraph", "text": "使用 Unity 开发的知名游戏数不胜数。《王者荣耀》《原神》《炉石传说》《纪念碑谷》《奥日与黑暗森林》《空洞骑士》等作品均基于 Unity 打造。除游戏外，Unity 在影视领域也有重要应用——迪士尼的《曼达洛人》等作品使用 Unity 进行虚拟制片和实时渲染。Unity 的实时 3D 技术正在重塑内容创作的方式，让\"所见即所得\"的实时渲染成为可能。" },
+    { "type": "subtitle", "text": "争议与挑战" },
+    { "type": "paragraph", "text": "Unity 近年也面临一些争议。2023 年 Unity 宣布推行\"运行时费用\"（Runtime Fee）政策，根据游戏安装量向开发者收费，引发了社区的强烈抗议，Unity 最终被迫撤回并修改政策。此外，Unity 与 Unreal Engine（虚幻引擎）的竞争日趋激烈——Unreal 在图形保真度和大厂项目中保持优势，而 Unity 则依靠易用性和移动端生态守住阵地。尽管如此，Unity 仍是全球实时 3D 开发领域不可忽视的重要力量。" }
+  ],
+  "source_url": "https://unity.com",
+  "sources": [
+    { "name": "Unity 官网", "url": "https://unity.com" },
+    { "name": "Unity Asset Store", "url": "https://assetstore.unity.com" }
+  ],
+  "updated": "2026-10-01"
+}

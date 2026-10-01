@@ -1,0 +1,40 @@
+{
+  "id": 19,
+  "title": "Node.js",
+  "aliases": ["Node", "NodeJS", "Node.js运行时"],
+  "category": "开发工具",
+  "tags": ["JavaScript", "后端", "V8引擎", "异步IO", "全栈", "npm"],
+  "abstract": "Node.js 是基于 Chrome V8 引擎的开源 JavaScript 运行时，让 JavaScript 脱离浏览器在服务器端运行，以其事件驱动、非阻塞 I/O 模型成为构建高并发网络应用的首选。",
+  "thumb": "",
+  "infobox": {
+    "软件名称": "Node.js",
+    "首次发布": "2009年",
+    "作者": "Ryan Dahl",
+    "核心引擎": "Chrome V8",
+    "开源协议": "MIT",
+    "包管理器": "npm、yarn、pnpm",
+    "托管组织": "OpenJS Foundation"
+  },
+  "content": [
+    { "type": "paragraph", "text": "Node.js 是基于 Chrome V8 引擎构建的开源 JavaScript 运行时，于 2009 年由 Ryan Dahl 首次发布。它让 JavaScript 摆脱了浏览器的束缚，得以在服务器端运行。Node.js 采用事件驱动、非阻塞 I/O 模型，使其轻量高效，特别适合构建数据密集型的实时应用，如聊天服务、API 网关、实时协作工具等。" },
+    { "type": "subtitle", "text": "诞生背景" },
+    { "type": "paragraph", "text": "Node.js 的诞生源于 Ryan Dahl 对当时 Web 服务器技术的反思。他发现大多数服务器在遇到高并发连接时表现不佳，根本原因在于传统的阻塞式 I/O 模型——每个请求占用一个线程，线程在等待磁盘或网络时会闲置。2009 年的 JSConf EU 上，Dahl 展示了 Node.js，其核心思想是用单线程 + 事件循环 + 非阻塞 I/O 解决 C10K（万级并发连接）问题。这一理念在当时极具颠覆性，迅速吸引了大量关注。" },
+    { "type": "subtitle", "text": "技术架构" },
+    { "type": "paragraph", "text": "Node.js 的架构可以分为三层。最底层是 Chrome V8 引擎，负责将 JavaScript 代码编译为机器码；中间层是 libuv——一个跨平台的异步 I/O 库，提供事件循环（Event Loop）、线程池和文件系统、网络、DNS 等底层操作；最上层是 Node.js 的 JavaScript API，包括 fs（文件系统）、http（HTTP 服务）、path（路径处理）、events（事件机制）等核心模块。这种架构使 Node.js 既能发挥 V8 的高性能，又能通过 libuv 实现跨平台的异步能力。" },
+    { "type": "subtitle", "text": "事件循环与异步编程" },
+    { "type": "paragraph", "text": "Node.js 的灵魂是事件循环（Event Loop）。它是单线程的，通过不断轮询事件队列来处理异步操作。当遇到 I/O 操作时，Node.js 不会等待，而是将其交给 libuv 的线程池处理，主线程继续执行后续代码，等 I/O 完成后通过回调通知。这种设计让 Node.js 在 I/O 密集型场景下表现优异。随着语言演进，异步编程从早期的回调地狱（Callback Hell），发展到 Promise，再到 async/await 语法糖，代码可读性和可维护性大幅提升。" },
+    { "type": "subtitle", "text": "npm 生态" },
+    { "type": "paragraph", "text": "Node.js 的成功离不开 npm（Node Package Manager）。npm 是全球最大的软件注册中心，截至 2025 年托管了超过 300 万个开源包，每周下载量以数十亿计。从 Express、Koa 等 Web 框架，到 Lodash、Moment.js 等工具库，再到 Webpack、Vite、Rollup 等构建工具，npm 生态覆盖了前端和后端的方方面面。yarn 和 pnpm 作为后起之秀，在性能和磁盘空间优化上做出了改进，形成了多包管理器并存的格局。" },
+    { "type": "subtitle", "text": "全栈统一语言" },
+    { "type": "paragraph", "text": "Node.js 的最大价值之一是实现前后端语言统一。开发者可以用同一种语言（JavaScript/TypeScript）编写客户端、服务端和数据库查询（通过 MongoDB 等），大幅降低了上下文切换成本。这一优势催生了 MEAN（MongoDB + Express + Angular + Node.js）和 MERN（MongoDB + Express + React + Node.js）等全栈架构。如今，Node.js 被 Netflix、Uber、PayPal、LinkedIn、eBay 等科技巨头广泛用于生产环境。" },
+    { "type": "subtitle", "text": "现代发展" },
+    { "type": "paragraph", "text": "近年来 Node.js 持续演进。2015 年引入的 LTS（长期支持）版本策略提升了企业采用信心；2018 年 Worker Threads 的引入让 Node.js 能够利用多核 CPU 处理 CPU 密集型任务；2023 年引入的权限模型（Permission Model）增强了安全性。与此同时，Deno（同样由 Ryan Dahl 创建）和 Bun 作为新一代 JavaScript 运行时，试图在性能、安全性和开发体验上超越 Node.js，推动了整个 JavaScript 运行时生态的持续进化。" }
+  ],
+  "source_url": "https://nodejs.org",
+  "sources": [
+    { "name": "Node.js 官网", "url": "https://nodejs.org" },
+    { "name": "npm 官网", "url": "https://www.npmjs.com" },
+    { "name": "Node.js GitHub", "url": "https://github.com/nodejs/node" }
+  ],
+  "updated": "2026-10-01"
+}

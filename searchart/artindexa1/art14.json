@@ -1,0 +1,37 @@
+{
+  "id": 14,
+  "title": "Jenkins",
+  "aliases": ["Jenkins", "自动化服务器", "CI/CD"],
+  "category": "开发工具",
+  "tags": ["持续集成", "持续交付", "自动化", "Java", "插件生态", "DevOps"],
+  "abstract": "Jenkins 是领先的开源自动化服务器，基于 Java 开发，用于持续集成与持续交付（CI/CD），通过海量插件扩展能力，是 DevOps 工具链中最经典的基础设施之一。",
+  "thumb": "",
+  "infobox": {
+    "软件名称": "Jenkins",
+    "开源协议": "MIT",
+    "编程语言": "Java",
+    "首次发布": "2011年（源自 Hudson）",
+    "平台": "跨平台（JVM）",
+    "核心功能": "持续集成、持续交付、自动化构建与部署",
+    "插件数量": "超过 1800 个"
+  },
+  "content": [
+    { "type": "paragraph", "text": "Jenkins 是一个基于 Java 开发的开源自动化服务器，用于实现持续集成（CI）和持续交付（CD）流程。它最初是 Hudson 项目的一个分支——2011 年，由于 Oracle 与 Hudson 核心开发团队在商标归属上的争议，社区将项目更名为 Jenkins 并独立发展。如今，Jenkins 已成为 DevOps 工具链中最经典、使用最广泛的自动化基础设施之一。" },
+    { "type": "subtitle", "text": "核心概念" },
+    { "type": "paragraph", "text": "Jenkins 的核心抽象是\"任务\"（Job），每个任务定义了一组自动化步骤，如拉取代码、编译构建、运行测试、打包制品、部署到服务器等。任务可以按时间计划触发（如每日构建），也可以由代码提交、合并请求或上游任务完成等事件触发。多个任务可以串联成\"流水线\"（Pipeline），用代码（Jenkinsfile）声明式地定义多阶段构建流程，实现复杂的部署编排。" },
+    { "type": "subtitle", "text": "Pipeline 即代码" },
+    { "type": "paragraph", "text": "Jenkins Pipeline 是其最具革命性的功能之一。通过 Jenkinsfile——一个用 Groovy DSL 编写的文本文件——用户可以将整个 CI/CD 流程以代码形式版本化管理。Pipeline 支持并行阶段、条件分支、失败重试、人工审批等高级特性，并可拆分为声明式（Declarative）和脚本式（Scripted）两种语法。将流水线代码与项目代码一起提交到仓库，实现了\"流水线即代码\"（Pipeline as Code），大幅提升了可维护性和可复现性。" },
+    { "type": "subtitle", "text": "插件生态" },
+    { "type": "paragraph", "text": "Jenkins 最强大的竞争力来自其庞大的插件生态。官方插件市场拥有超过 1800 个插件，覆盖版本控制（Git、GitHub、Bitbucket）、构建工具（Maven、Gradle、npm）、容器（Docker、Kubernetes）、通知（Slack、Email、钉钉）、代码质量（SonarQube、JaCoCo）、部署（AWS、Azure、Ansible）等几乎所有 DevOps 场景。这种\"插件至上\"的架构让 Jenkins 可以适配任何技术栈和工作流程。" },
+    { "type": "subtitle", "text": "分布式构建" },
+    { "type": "paragraph", "text": "Jenkins 支持分布式构建架构。主节点（Master）负责任务调度和界面展示，工作节点（Agent）则执行实际的构建任务。通过配置多个 Agent（可以是物理机、虚拟机或容器），Jenkins 可以将大量构建任务并行分发，显著缩短构建时间。在 Kubernetes 环境中，Jenkins 可以动态创建 Pod 作为临时 Agent，任务完成后自动销毁，实现弹性的 CI 资源调度。" },
+    { "type": "subtitle", "text": "局限与替代方案" },
+    { "type": "paragraph", "text": "尽管 Jenkins 功能强大，但也存在一些局限性：配置依赖插件导致环境不一致、Groovy 脚本学习曲线陡峭、界面相对陈旧、大规模并发时性能瓶颈等。近年来，GitHub Actions、GitLab CI、CircleCI、Drone 等新一代 CI/CD 工具凭借更简洁的配置（YAML 即流水线）和云原生集成，对 Jenkins 构成了有力挑战。不过，凭借庞大的存量用户群和成熟的插件生态，Jenkins 在大型企业中长期仍将占据重要地位。" }
+  ],
+  "source_url": "https://www.jenkins.io",
+  "sources": [
+    { "name": "Jenkins 官网", "url": "https://www.jenkins.io" },
+    { "name": "Jenkins 插件市场", "url": "https://plugins.jenkins.io" }
+  ],
+  "updated": "2026-10-01"
+}
