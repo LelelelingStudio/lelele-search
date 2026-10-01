@@ -316,15 +316,14 @@
     if (data && data.summary) {
       summaryBox.classList.remove('hidden');
       summaryBody.innerHTML = `<p>${escapeHtml(data.summary).replace(/\n/g, '</p><p>')}</p>`;
-      if (summaryEngine && data.summary_by) {
+      if (summaryEngine) {
         const byLabel = {
-          'rule_fallback': '规则兜底',
-          'ai': 'AI 生成',
-          'llm': 'AI 生成'
-        }[data.summary_by] || data.summary_by;
-        summaryEngine.textContent = `来源: ${byLabel}`;
-      } else if (summaryEngine && data.engine) {
-        summaryEngine.textContent = `来源: ${data.engine}`;
+          'rule_fallback': '基础总结',
+          'agnes-2.5-flash': 'Agnes',
+          'llama-3.1-8b-instant': 'Groq',
+          'deepseek-chat': 'DeepSeek'
+        }[data.summary_by] || data.summary_by || '';
+        summaryEngine.textContent = byLabel ? `来自 ${byLabel}` : '';
       }
     } else if (summaryBox) {
       summaryBox.classList.add('hidden');
@@ -343,16 +342,25 @@
 
     // ---- 结果列表 ----
     if (results.length > 0) {
-      resultList.innerHTML = results.map(item => `
+      resultList.innerHTML = results.map(item => {
+        // ⚠️ 后端返回的是 link 字段（同时兼容 url）。
+        // 之前只读 item.url 会拿到 undefined → href="#" → 点击后
+        // 在新标签页重新打开当前搜索页，看起来像"又搜了一遍"。
+        const link = item.link || item.url || '';
+        const safeUrl = escapeUrl(link);
+        const hasLink = safeUrl !== '#';
+        return `
         <li class="result-item">
           <div class="result-title">
-            <a href="${escapeUrl(item.url)}" target="_blank" rel="noopener noreferrer">${escapeHtml(item.title || '无标题')}</a>
+            ${hasLink
+              ? `<a href="${safeUrl}" target="_blank" rel="noopener noreferrer">${escapeHtml(item.title || '无标题')}</a>`
+              : `<span>${escapeHtml(item.title || '无标题')}</span>`}
           </div>
-          ${item.url ? `<div class="result-url">${escapeHtml(item.url)}</div>` : ''}
+          ${link ? `<div class="result-url">${escapeHtml(link)}</div>` : ''}
           ${item.snippet ? `<div class="result-snippet">${escapeHtml(item.snippet)}</div>` : ''}
           ${item.source ? `<span class="result-source">${escapeHtml(item.source)}</span>` : ''}
-        </li>
-      `).join('');
+        </li>`;
+      }).join('');
     } else if (lexiconMatches.length === 0) {
       // 既没有词条也没有网页结果
       resultList.innerHTML = '<li class="result-item"><div class="result-title">未找到结果</div><div class="result-snippet">试试其他关键词吧</div></li>';

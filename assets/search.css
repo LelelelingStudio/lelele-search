@@ -125,6 +125,54 @@
   margin-top: 8px;
 }
 
+/* AI 总结底部：署名 + 聊天入口 */
+.summary-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-top: 16px;
+  padding-top: 12px;
+  border-top: 1px solid var(--border);
+}
+
+.summary-credit {
+  font-size: 12px;
+  color: var(--text-muted);
+}
+
+.summary-chat-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  padding: 6px 14px;
+  border-radius: 16px;
+  font-size: 12.5px;
+  font-weight: 600;
+  color: #fff;
+  background: var(--accent);
+  border: 1px solid var(--accent);
+  transition: var(--transition);
+  white-space: nowrap;
+}
+
+.summary-chat-btn:hover {
+  background: var(--accent-hover);
+  border-color: var(--accent-hover);
+  color: #fff;
+  transform: translateY(-1px);
+}
+
+.summary-chat-btn:active {
+  transform: translateY(0);
+}
+
+.summary-chat-btn svg {
+  width: 13px;
+  height: 13px;
+}
+
 /* ===== 词条卡片区 ===== */
 .lexicon-section {
   margin-bottom: 24px;
