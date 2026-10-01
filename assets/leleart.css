@@ -130,48 +130,74 @@
   border-radius: var(--radius) 0 0 var(--radius);
 }
 
-/* ===== 正文段落 ===== */
+/* ===== 正文段落（content 数组渲染） ===== */
 .leleart-sections {
   display: flex;
   flex-direction: column;
-  gap: 20px;
+  gap: 0;
 }
 
-.leleart-section h2 {
+.leleart-sections p {
+  font-size: 14px;
+  line-height: 1.9;
+  color: var(--text-secondary);
+  margin-bottom: 14px;
+}
+
+.leleart-subtitle {
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--accent);
+  margin: 24px 0 10px;
+  padding-left: 12px;
+  border-left: 3px solid var(--accent);
+}
+
+.leleart-heading {
   font-size: 18px;
   font-weight: 700;
   color: var(--text-primary);
-  margin-bottom: 10px;
+  margin: 28px 0 12px;
   padding-bottom: 6px;
   border-bottom: 1px solid var(--border);
 }
 
-.leleart-section h3 {
-  font-size: 15px;
-  font-weight: 600;
-  color: var(--text-secondary);
-  margin-bottom: 8px;
-  margin-top: 16px;
+.leleart-figure {
+  margin: 20px 0;
+  text-align: center;
 }
 
-.leleart-section p {
-  font-size: 14px;
-  line-height: 1.8;
-  color: var(--text-secondary);
-  margin-bottom: 10px;
+.leleart-figure img {
+  max-width: 100%;
+  height: auto;
+  border-radius: var(--radius);
+  border: 1px solid var(--border);
 }
 
-.leleart-section ul,
-.leleart-section ol {
+.leleart-figure figcaption {
+  font-size: 12px;
+  color: var(--text-muted);
+  margin-top: 8px;
+  font-style: italic;
+}
+
+.leleart-list {
   padding-left: 20px;
-  margin-bottom: 10px;
+  margin: 10px 0 16px;
 }
 
-.leleart-section li {
+.leleart-list li {
   font-size: 14px;
   line-height: 1.8;
   color: var(--text-secondary);
   margin-bottom: 4px;
+}
+
+.leleart-link {
+  color: var(--accent);
+  font-weight: 600;
+  text-decoration: underline;
+  text-underline-offset: 2px;
 }
 
 /* ===== 底部来源 ===== */
@@ -319,8 +345,9 @@
   .leleart-main { padding: 16px 12px 40px; }
   .leleart-title { font-size: 22px; }
   .leleart-abstract { font-size: 14px; padding: 14px 16px; }
-  .leleart-section h2 { font-size: 16px; }
-  .leleart-section p { font-size: 13px; }
+  .leleart-sections p { font-size: 13px; }
+  .leleart-subtitle { font-size: 15px; }
+  .leleart-heading { font-size: 16px; }
 
   .leleart-infobox {
     flex-direction: column;
