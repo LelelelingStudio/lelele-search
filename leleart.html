@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>词条详情 - 了了了搜</title>
+  <link rel="icon" type="image/png" href="https://search.leleleling.site/icon.png">
+  <link rel="stylesheet" href="assets/common.css">
+  <link rel="stylesheet" href="assets/leleart.css">
+</head>
+<body>
+  <!-- 顶部栏 -->
+  <header class="leleart-header">
+    <div class="header-inner">
+      <a href="index.html" class="header-logo">了了了搜</a>
+      <a href="search.html" class="header-back" id="backToSearch">← 返回搜索</a>
+    </div>
+  </header>
+
+  <!-- 加载中 -->
+  <div class="leleart-loading hidden" id="leleartLoading">
+    <div class="loading-dots"><span></span><span></span><span></span></div>
+  </div>
+
+  <!-- 错误 -->
+  <div class="leleart-error hidden" id="leleartError"></div>
+
+  <!-- 主内容 -->
+  <main class="leleart-main hidden" id="leleartMain">
+    <div class="leleart-layout">
+      <!-- 左侧：正文 -->
+      <article class="leleart-content">
+        <!-- 标题区 -->
+        <header class="leleart-title-area">
+          <h1 class="leleart-title" id="artTitle"></h1>
+          <span class="leleart-badge">了了了词条</span>
+        </header>
+        <div class="leleart-aliases" id="artAliases"></div>
+
+        <!-- 摘要 -->
+        <section class="leleart-abstract" id="artAbstract"></section>
+
+        <!-- 正文段落 -->
+        <div class="leleart-sections" id="artSections"></div>
+
+        <!-- 底部来源 -->
+        <footer class="leleart-source">
+          <span class="leleart-source-label">了解更多：</span>
+          <a href="#" target="_blank" id="artSourceLink" class="leleart-source-link">访问原始来源 →</a>
+        </footer>
+      </article>
+
+      <!-- 右侧：信息栏 -->
+      <aside class="leleart-sidebar">
+        <div class="leleart-infobox card" id="artInfobox">
+          <!-- 图片 -->
+          <div class="infobox-image" id="artImage"></div>
+          <!-- 信息表 -->
+          <table class="infobox-table" id="artInfoTable"></table>
+        </div>
+      </aside>
+    </div>
+  </main>
+
+  <!-- 底部 -->
+  <footer class="leleart-footer">
+    <a href="https://leleleling.site/support.html" target="_blank" class="support-link">支持我们</a>
+    <span class="sep">·</span>
+    <a href="index.html" class="back-home">返回首页</a>
+    <p class="copyright">© 2026 Leleleling Studio</p>
+  </footer>
+
+  <script src="assets/leleart-app.js"></script>
+</body>
+</html>
