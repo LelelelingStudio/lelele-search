@@ -1,0 +1,270 @@
+/* ===== 首页布局 ===== */
+.home-container {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 24px 16px 48px;
+  max-width: 720px;
+  margin: 0 auto;
+}
+
+/* ===== Logo 区域 ===== */
+.logo-area {
+  text-align: center;
+  margin-bottom: 40px;
+  animation: fade-in-down 0.6s ease-out;
+}
+
+.logo-text {
+  font-size: 48px;
+  font-weight: 800;
+  background: linear-gradient(135deg, var(--accent), #c084fc);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  letter-spacing: -1px;
+}
+
+.logo-sub {
+  font-size: 14px;
+  color: var(--text-muted);
+  margin-top: 8px;
+  letter-spacing: 2px;
+}
+
+/* ===== 搜索框 ===== */
+.search-form {
+  width: 100%;
+  margin-bottom: 48px;
+  animation: fade-in-up 0.6s ease-out 0.1s both;
+}
+
+.search-box {
+  display: flex;
+  align-items: center;
+  background: var(--bg-secondary);
+  border: 2px solid var(--border);
+  border-radius: 28px;
+  padding: 4px 4px 4px 20px;
+  transition: var(--transition);
+  box-shadow: var(--shadow);
+}
+
+.search-box:focus-within {
+  border-color: var(--accent);
+  box-shadow: 0 0 0 4px var(--accent-glow), var(--shadow);
+}
+
+.search-input {
+  flex: 1;
+  height: 44px;
+  font-size: 16px;
+  color: var(--text-primary);
+  padding-right: 12px;
+}
+
+.search-input::placeholder {
+  color: var(--text-muted);
+}
+
+.search-btn {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: var(--accent);
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: var(--transition);
+  flex-shrink: 0;
+}
+
+.search-btn:hover {
+  background: var(--accent-hover);
+  transform: scale(1.05);
+}
+
+.search-btn svg {
+  width: 20px;
+  height: 20px;
+}
+
+/* ===== 快捷入口 ===== */
+.shortcuts-section {
+  width: 100%;
+  margin-bottom: 40px;
+  animation: fade-in-up 0.6s ease-out 0.2s both;
+}
+
+.section-title {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin-bottom: 16px;
+  text-align: center;
+}
+
+.shortcuts-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 12px;
+}
+
+.shortcut-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  padding: 16px 8px;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  transition: var(--transition);
+  cursor: pointer;
+  text-align: center;
+}
+
+.shortcut-item:hover {
+  background: var(--bg-hover);
+  border-color: var(--accent);
+  transform: translateY(-2px);
+}
+
+.shortcut-icon {
+  width: 36px;
+  height: 36px;
+  border-radius: 10px;
+  background: var(--accent-glow);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 20px;
+}
+
+.shortcut-name {
+  font-size: 12px;
+  color: var(--text-secondary);
+  font-weight: 500;
+}
+
+/* ===== 每日语录 ===== */
+.quote-section {
+  width: 100%;
+  margin-bottom: 40px;
+  animation: fade-in-up 0.6s ease-out 0.3s both;
+}
+
+.quote-card {
+  background: linear-gradient(135deg, var(--bg-card), var(--bg-secondary));
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 24px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.quote-card::before {
+  content: "\201C";
+  position: absolute;
+  top: -10px;
+  left: 12px;
+  font-size: 80px;
+  color: var(--accent-glow);
+  font-family: Georgia, serif;
+  line-height: 1;
+}
+
+.quote-text {
+  display: block;
+  font-size: 15px;
+  color: var(--text-primary);
+  line-height: 1.8;
+  font-style: italic;
+  margin-bottom: 12px;
+}
+
+.quote-author {
+  font-size: 13px;
+  color: var(--text-muted);
+}
+
+/* ===== 底部 ===== */
+.home-footer {
+  text-align: center;
+  animation: fade-in-up 0.6s ease-out 0.4s both;
+}
+
+.support-link {
+  display: inline-block;
+  padding: 8px 20px;
+  background: var(--accent-glow);
+  border: 1px solid var(--accent);
+  border-radius: 20px;
+  color: var(--accent);
+  font-size: 13px;
+  font-weight: 600;
+  margin-bottom: 12px;
+  transition: var(--transition);
+}
+
+.support-link:hover {
+  background: var(--accent);
+  color: #fff;
+}
+
+.copyright {
+  font-size: 11px;
+  color: var(--text-muted);
+}
+
+/* ===== 动画 ===== */
+@keyframes fade-in-down {
+  from { opacity: 0; transform: translateY(-20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fade-in-up {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* ===== 移动端适配 ===== */
+@media (max-width: 768px) {
+  .logo-text { font-size: 36px; }
+  .logo-sub { font-size: 12px; }
+  .search-box { padding: 4px 4px 4px 16px; }
+  .search-input { font-size: 15px; height: 40px; }
+  .search-btn { width: 44px; height: 44px; }
+  .shortcuts-grid { grid-template-columns: repeat(4, 1fr); gap: 8px; }
+  .shortcut-item { padding: 12px 4px; }
+  .shortcut-icon { width: 32px; height: 32px; font-size: 18px; }
+  .shortcut-name { font-size: 11px; }
+  .quote-card { padding: 20px 16px; }
+  .quote-text { font-size: 14px; }
+}
+
+@media (max-width: 480px) {
+  .home-container { padding: 16px 12px 32px; }
+  .logo-text { font-size: 32px; }
+  .shortcuts-grid { grid-template-columns: repeat(4, 1fr); gap: 6px; }
+  .shortcut-item { padding: 10px 2px; }
+  .shortcut-name { font-size: 10px; }
+  .lang-switch { top: 12px; right: 12px; }
+  .lang-btn { padding: 3px 8px; font-size: 11px; }
+}
+
+/* ===== 横屏适配 ===== */
+@media (max-height: 500px) and (orientation: landscape) {
+  .home-container { justify-content: flex-start; padding-top: 40px; }
+  .logo-area { margin-bottom: 20px; }
+  .logo-text { font-size: 28px; }
+  .search-form { margin-bottom: 20px; }
+  .shortcuts-section { margin-bottom: 20px; }
+  .quote-section { margin-bottom: 20px; }
+}
