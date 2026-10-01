@@ -169,8 +169,10 @@
 }
 
 .summary-chat-btn svg {
-  width: 13px;
-  height: 13px;
+  width: 12px;
+  height: 12px;
+  flex-shrink: 0;
+  display: block;
 }
 
 /* ===== 词条卡片区 ===== */
