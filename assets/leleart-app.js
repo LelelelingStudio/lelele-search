@@ -1,6 +1,6 @@
 /**
  * 了了了搜 - 词条详情页逻辑
- * 功能：加载完整词条 JSON → 渲染标题/别名/摘要/信息栏/正文段落
+ * 格式：content 数组 + type 字段（paragraph / subtitle / image）
  */
 
 (function () {
@@ -29,7 +29,7 @@
       return;
     }
 
-    // 返回搜索按钮：如果有 q 参数就带回去
+    // 返回搜索按钮
     const q = params.get('q');
     if (backToSearch) {
       if (q) {
@@ -113,7 +113,6 @@
           </tr>
         `).join('');
       } else {
-        // 没有 infobox 时至少显示分类
         if (data.category) {
           artInfoTable.innerHTML = `
             <tr><th>分类</th><td>${escapeHtml(data.category)}</td></tr>
@@ -126,38 +125,62 @@
       }
     }
 
-    // 正文段落
+    // ===== 正文渲染（content 数组 + type 字段）=====
     if (artSections) {
-      if (data.sections && data.sections.length > 0) {
-        artSections.innerHTML = data.sections.map(section => {
-          let html = '';
-          if (section.heading) {
-            html += `<h2>${escapeHtml(section.heading)}</h2>`;
-          }
-          if (section.subsections && section.subsections.length > 0) {
-            section.subsections.forEach(sub => {
-              if (sub.title) {
-                html += `<h3>${escapeHtml(sub.title)}</h3>`;
+      if (data.content && Array.isArray(data.content) && data.content.length > 0) {
+        let html = '';
+        data.content.forEach(item => {
+          if (!item || !item.type) return;
+
+          switch (item.type) {
+            case 'paragraph':
+              if (item.text) {
+                html += `<p>${escapeHtml(item.text)}</p>`;
               }
-              if (sub.content) {
-                html += `<p>${escapeHtml(sub.content)}</p>`;
+              break;
+
+            case 'subtitle':
+              if (item.text) {
+                html += `<h3 class="leleart-subtitle">${escapeHtml(item.text)}</h3>`;
               }
-            });
-          } else if (section.content) {
-            // 支持数组或字符串
-            if (Array.isArray(section.content)) {
-              section.content.forEach(p => {
-                html += `<p>${escapeHtml(p)}</p>`;
-              });
-            } else {
-              html += `<p>${escapeHtml(section.content)}</p>`;
-            }
+              break;
+
+            case 'image':
+              if (item.src) {
+                html += `<figure class="leleart-figure">
+                  <img src="${escapeHtml(item.src)}" alt="${escapeHtml(item.caption || item.text || data.title)}" loading="lazy" onerror="this.parentElement.style.display='none'">
+                  ${item.caption ? `<figcaption>${escapeHtml(item.caption)}</figcaption>` : ''}
+                </figure>`;
+              }
+              break;
+
+            case 'heading':
+              if (item.text) {
+                html += `<h2 class="leleart-heading">${escapeHtml(item.text)}</h2>`;
+              }
+              break;
+
+            case 'list':
+              if (item.items && Array.isArray(item.items)) {
+                html += `<ul class="leleart-list">${item.items.map(li => `<li>${escapeHtml(li)}</li>`).join('')}</ul>`;
+              }
+              break;
+
+            case 'link':
+              if (item.url && item.text) {
+                html += `<p><a href="${escapeHtml(item.url)}" target="_blank" rel="noopener" class="leleart-link">${escapeHtml(item.text)}</a></p>`;
+              }
+              break;
+
+            default:
+              // 未知类型，尝试当纯文本处理
+              if (item.text) {
+                html += `<p>${escapeHtml(item.text)}</p>`;
+              }
           }
-          if (section.list && Array.isArray(section.list)) {
-            html += `<ul>${section.list.map(item => `<li>${escapeHtml(item)}</li>`).join('')}</ul>`;
-          }
-          return `<div class="leleart-section">${html}</div>`;
-        }).join('');
+        });
+
+        artSections.innerHTML = html;
       } else {
         artSections.innerHTML = '';
       }
