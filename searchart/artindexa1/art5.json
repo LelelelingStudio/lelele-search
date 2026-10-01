@@ -1,0 +1,43 @@
+{
+  "id": 5,
+  "title": "GitHub",
+  "aliases": ["GitHub", "gh", "代码托管平台", "全球最大开源社区"],
+  "category": "开发工具",
+  "tags": ["代码托管", "Git", "开源", "协作", "微软", "Copilot", "DevOps"],
+  "abstract": "GitHub 是全球最大的代码托管与开发者协作平台，基于 Git 版本控制系统构建，拥有超过 1.5 亿注册用户和 4.2 亿个代码仓库，是开源软件运动的核心枢纽。",
+  "thumb": "",
+  "infobox": {
+    "网站名称": "GitHub",
+    "创始人": "Tom Preston-Werner、Chris Wanstrath、P.J. Hyett、Scott Chacon",
+    "总部地点": "美国加利福尼亚州旧金山",
+    "上线时间": "2008年4月",
+    "所属公司": "微软（2018年收购）",
+    "注册用户": "超过 1.5 亿",
+    "代码仓库": "超过 4.2 亿个（含公开与私有）",
+    "收购金额": "75 亿美元（2018年）"
+  },
+  "content": [
+    { "type": "paragraph", "text": "GitHub 是一个基于 Git 版本控制系统的代码托管和开发者协作平台，于 2008 年 4 月正式上线。它的诞生源于一个简单而深刻的洞察：Git 本身功能强大但学习曲线陡峭，开发者需要一个友好的 Web 界面来降低协作门槛。四位联合创始人 Tom Preston-Werner、Chris Wanstrath、P.J. Hyett 和 Scott Chacon 在旧金山的一个公寓里写出了 GitHub 的第一个版本，谁也没有预料到它会成长为今天全球软件开发的基础设施。" },
+    { "type": "subtitle", "text": "发展历程" },
+    { "type": "paragraph", "text": "GitHub 上线仅一年后便获得了首轮风险投资，此后增长势如破竹。2012 年，公司完成 1 亿美元 A 轮融资，估值突破 7.5 亿美元。2018 年 6 月，科技界爆出重磅消息：微软宣布以 75 亿美元全资收购 GitHub，这一交易于同年 10 月正式完成。收购后 GitHub 保持独立运营，并在微软的支持下加速全球化扩张，相继在印度、日本等地设立工程团队。" },
+    { "type": "subtitle", "text": "核心功能" },
+    { "type": "paragraph", "text": "GitHub 的核心围绕代码仓库（Repository）展开。每个仓库可以托管一个项目的全部代码文件，支持分支管理、提交历史和版本回溯。Pull Request（PR）是 GitHub 最具革命性的协作功能——开发者可以在独立分支上修改代码，然后发起 PR 请求合并到主分支，其他成员可以在此进行代码审查、讨论和批准，形成透明的质量控制流程。Issues 系统则提供了轻量级的项目管理和 Bug 追踪能力。" },
+    { "type": "subtitle", "text": "GitHub Actions 与自动化" },
+    { "type": "paragraph", "text": "2018 年推出的 GitHub Actions 是平台最重要的功能升级之一。它允许开发者直接在仓库中定义自动化工作流，涵盖持续集成（CI）、持续部署（CD）、自动化测试、代码扫描等场景。通过 YAML 配置文件，开发者可以指定触发条件（如代码推送、PR 创建、定时任务），Actions 会自动在云端运行任务。这一功能使 GitHub 从单纯的代码托管平台进化为完整的 DevOps 平台。" },
+    { "type": "subtitle", "text": "GitHub Copilot" },
+    { "type": "paragraph", "text": "2021 年 GitHub 与 OpenAI 合作推出了 Copilot，这是全球首个大规模商用的 AI 编程助手。Copilot 基于大语言模型，能够在开发者编写代码时实时提供整行或整段代码建议，支持数十种编程语言。2025 年发布的 Copilot X 进一步集成了 GPT-4，增加了语音编程、自动生成提交信息、代码解释和测试用例生成等功能，被誉为软件开发史上最具颠覆性的工具之一。" },
+    { "type": "subtitle", "text": "开源生态与文化" },
+    { "type": "paragraph", "text": "GitHub 是开源软件运动的核心阵地。Linux 内核、React、Vue、TensorFlow、Kubernetes、Rust 编译器——几乎所有知名开源项目都在 GitHub 上托管。Star（收藏）、Fork（复刻）、Watch（关注）等社交化功能让开发者可以像使用社交网络一样发现和参与项目。每年的 GitHub Universe 大会和 GitHub Octoverse 年度报告已成为全球开发者社区的年度盛事。" },
+    { "type": "subtitle", "text": "GitHub Pages 与 GitHub Education" },
+    { "type": "paragraph", "text": "除了核心的代码托管功能，GitHub 还提供了多个衍生服务。GitHub Pages 允许用户直接从仓库发布静态网站，是个人博客、项目文档和作品集的热门选择。GitHub Education 则为学生和教师提供免费的开发工具包（GitHub Student Developer Pack），包含数十家合作伙伴的付费服务，惠及全球数百万计算机专业学生。GitHub Sponsors 则让开发者可以直接通过平台获得经济赞助，支持开源项目的可持续发展。" },
+    { "type": "subtitle", "text": "安全与合规" },
+    { "type": "paragraph", "text": "随着软件供应链安全日益重要，GitHub 持续加强安全能力。Dependabot 可自动检测依赖项中的已知漏洞并发起修复 PR；CodeQL 提供语义代码分析以发现潜在安全缺陷；Secret Scanning 能自动识别提交到仓库中的 API 密钥和凭证。这些功能已被集成到 GitHub Advanced Security 企业套餐中，成为 DevSecOps 实践的重要组成部分。" }
+  ],
+  "source_url": "https://github.com",
+  "sources": [
+    { "name": "GitHub 官网", "url": "https://github.com" },
+    { "name": "GitHub About", "url": "https://github.com/about" },
+    { "name": "Octoverse 年度报告", "url": "https://octoverse.github.com" }
+  ],
+  "updated": "2026-10-01"
+}
