@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>了了了搜 - 聚合搜索引擎</title>
+  <link rel="icon" type="image/png" href="https://search.leleleling.site/icon.png">
+  <link rel="stylesheet" href="assets/common.css">
+  <link rel="stylesheet" href="assets/home.css">
+</head>
+<body>
+  <!-- 语言切换 -->
+  <div class="lang-switch">
+    <button class="lang-btn active" data-lang="zh">中</button>
+    <button class="lang-btn" data-lang="en">EN</button>
+    <button class="lang-btn" data-lang="ja">日</button>
+    <button class="lang-btn" data-lang="fr">FR</button>
+  </div>
+
+  <!-- 主容器 -->
+  <div class="home-container">
+    <!-- Logo -->
+    <div class="logo-area">
+      <h1 class="logo-text" data-i18n="logo">了了了搜</h1>
+      <p class="logo-sub" data-i18n="subtitle">聚合搜索 · 纯净体验</p>
+    </div>
+
+    <!-- 搜索框 -->
+    <form class="search-form" action="search.html" method="GET">
+      <div class="search-box">
+        <input type="text" name="q" class="search-input" placeholder="输入关键词搜索..." autocomplete="off" required>
+        <button type="submit" class="search-btn">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="11" cy="11" r="8"></circle>
+            <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+          </svg>
+        </button>
+      </div>
+    </form>
+
+    <!-- 快捷入口 -->
+    <div class="shortcuts-section">
+      <h3 class="section-title" data-i18n="shortcuts">快捷入口</h3>
+      <div class="shortcuts-grid" id="shortcutsGrid">
+        <!-- JS 动态渲染 -->
+      </div>
+    </div>
+
+    <!-- 每日语录 -->
+    <div class="quote-section">
+      <div class="quote-card" id="quoteCard">
+        <span class="quote-text" id="quoteText">Loading...</span>
+        <span class="quote-author" id="quoteAuthor"></span>
+      </div>
+    </div>
+
+    <!-- 底部 -->
+    <footer class="home-footer">
+      <a href="https://leleleling.site/support.html" target="_blank" class="support-link" data-i18n="support">支持我们</a>
+      <p class="copyright">© 2026 Leleleling Studio</p>
+    </footer>
+  </div>
+
+  <script src="https://leleleling_guliyu_a.surge.sh/motivationalQuotes.js"></script>
+  <script src="assets/app.js"></script>
+</body>
+</html>
