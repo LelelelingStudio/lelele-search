@@ -3,7 +3,7 @@
   position: sticky;
   top: 0;
   z-index: 50;
-  background: rgba(15, 15, 20, 0.95);
+  background: var(--header-bg);
   backdrop-filter: blur(12px);
   border-bottom: 1px solid var(--border);
   padding: 12px 16px;
@@ -15,6 +15,20 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
+}
+
+/* 右侧操作区：返回按钮 + 主题切换 */
+.leleart-header .header-actions {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+/* 顶栏内的主题按钮改为普通流式定位 */
+.leleart-header .theme-toggle {
+  position: static;
+  width: 34px;
+  height: 34px;
 }
 
 .leleart-header .header-logo {
@@ -239,6 +253,17 @@
   width: 100%;
   height: 100%;
   object-fit: cover;
+}
+
+/* 无缩略图时的分类图标占位 */
+.infobox-image-fallback {
+  background: linear-gradient(135deg, var(--accent-glow), transparent);
+}
+
+.infobox-icon {
+  font-size: 56px;
+  line-height: 1;
+  opacity: 0.85;
 }
 
 .infobox-table {

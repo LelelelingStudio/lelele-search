@@ -8,6 +8,10 @@
 
   // ===== 配置 =====
   const WORKER_URL = 'https://lelele-search.lelelelingstudio1.workers.dev';
+  // ⚠️ 安全提示：前端代码中的密钥会随公开仓库暴露，任何人都能在浏览器里看到。
+  // 这只是"防随手盗用"的门槛，真正的防护应依赖 Worker 端的
+  // Origin/Referer 白名单 + 频率限制，此外建议定期轮换此密钥。
+  const WORKER_API_KEY = 'lelelesearch-leleleling930happy30874031heosfjdah';
   const INDEX_URL = 'searchart/artindexa1.json';
   const MAX_LEXICON_SHOWN = 3;
 
@@ -27,7 +31,6 @@
   const pagePrev = document.getElementById('pagePrev');
   const pageNext = document.getElementById('pageNext');
   const pageInfo = document.getElementById('pageInfo');
-  const langSelect = document.getElementById('langSelect');
 
   // ===== 状态 =====
   let currentQuery = '';
@@ -36,7 +39,8 @@
   let lexiconMatches = [];       // 匹配到的词条（已分级）
   let lexiconExpanded = false;   // 是否展开更多
   let searchResults = [];        // Worker 返回的结果
-  let currentLang = localStorage.getItem('lll_lang') || 'zh';
+  let workerFailed = false;      // Worker 是否调用失败
+  const currentLang = 'zh';      // 语言切换已移除，固定中文
 
   // ===== 初始化 =====
   function init() {
@@ -52,18 +56,6 @@
     // 填充搜索框
     if (headerSearchInput) {
       headerSearchInput.value = currentQuery;
-    }
-
-    // 语言
-    if (langSelect) {
-      langSelect.value = currentLang === 'zh' ? 'zh-CN' : currentLang === 'en' ? 'en-US' : currentLang === 'ja' ? 'ja-JP' : 'fr-FR';
-      langSelect.addEventListener('change', () => {
-        const val = langSelect.value;
-        currentLang = val === 'zh-CN' ? 'zh' : val === 'en-US' ? 'en' : val === 'ja-JP' ? 'ja' : 'fr';
-        localStorage.setItem('lll_lang', currentLang);
-        // 重新搜索
-        doSearch();
-      });
     }
 
     // 绑定事件
@@ -84,17 +76,19 @@
     hideAll();
 
     try {
-      // 并行：加载索引 + 调用 Worker
-      const [indexData] = await Promise.all([
-        loadLexiconIndex(),
-        Promise.resolve() // Worker 调用在下面单独处理错误
-      ]);
+      // 加载索引
+      const indexData = await loadLexiconIndex();
 
-      // 词条匹配
-      if (indexData && indexData.items) {
+      // 词条匹配 —— 必须每次都重置，避免残留上一次的结果
+      if (indexData && Array.isArray(indexData.items)) {
         lexiconIndex = indexData;
         matchLexicon(currentQuery);
         renderLexicon();
+      } else {
+        // 索引不可用：清空匹配，避免显示上一次的词条
+        lexiconMatches = [];
+        lexiconExpanded = false;
+        lexiconSection.classList.add('hidden');
       }
 
       // 调用 Worker
@@ -194,7 +188,7 @@
     lexiconList.innerHTML = toShow.map(item => `
       <div class="lexicon-card match-${item.matchType}" data-id="${item.id}">
         <div class="lexicon-thumb">
-          <img src="assets/placeholder.png" alt="" loading="lazy" onerror="this.style.display='none'">
+          <span class="lexicon-thumb-fallback">${categoryIcon(item.category)}</span>
         </div>
         <div class="lexicon-content">
           <div class="lexicon-title">${escapeHtml(item.title)}</div>
@@ -218,23 +212,42 @@
 
     // 加载每个匹配词条的摘要
     toShow.forEach(item => {
+      const card = lexiconList.querySelector(`[data-id="${item.id}"]`);
+      if (!card) return;
+
+      const abstractEl = card.querySelector('.lexicon-abstract');
+      const thumbEl = card.querySelector('.lexicon-thumb');
+
       fetch(`searchart/artindexa1/art${item.id}.json`)
-        .then(res => res.json())
+        .then(res => {
+          if (!res.ok) throw new Error(`HTTP ${res.status}`);
+          return res.json();
+        })
         .then(data => {
-          const card = lexiconList.querySelector(`[data-id="${item.id}"]`);
-          if (card) {
-            const abstract = card.querySelector('.lexicon-abstract');
-            if (abstract && data.abstract) {
-              abstract.textContent = data.abstract;
-            }
-            const thumb = card.querySelector('.lexicon-thumb img');
-            if (thumb && data.thumb) {
-              thumb.src = data.thumb;
-              thumb.style.display = '';
-            }
+          if (abstractEl && data.abstract) {
+            abstractEl.textContent = data.abstract;
+          }
+          // 只有当 thumb 确实是非空字符串时才替换为图片
+          const thumbUrl = typeof data.thumb === 'string' ? data.thumb.trim() : '';
+          if (thumbEl && thumbUrl) {
+            const img = document.createElement('img');
+            img.alt = data.title || '';
+            img.loading = 'lazy';
+            img.onerror = () => {
+              // 图片加载失败时保留分类图标占位
+              img.remove();
+            };
+            img.src = thumbUrl;
+            thumbEl.appendChild(img);
           }
         })
-        .catch(() => {});
+        .catch(err => {
+          // 单个词条加载失败不应影响其它卡片
+          if (abstractEl && abstractEl.textContent === '正在加载摘要...') {
+            abstractEl.textContent = '摘要加载失败';
+          }
+          console.warn(`词条 ${item.id} 加载失败:`, err);
+        });
     });
 
     // 更多按钮
@@ -257,70 +270,107 @@
 
       const res = await fetch(`${WORKER_URL}/search?${params}`, {
         headers: {
-          'x-api-key': 'lelelesearch-leleleling930happy30874031heosfjdah' // 替换为你的实际 key
+          'x-api-key': WORKER_API_KEY
         }
       });
 
       if (!res.ok) {
-        throw new Error(`Worker 返回 ${res.status}`);
+        // 403 通常是来源校验或 key 失效，给出更明确提示
+        if (res.status === 403) {
+          throw new Error('搜索服务拒绝了本次请求（来源校验或密钥失效）');
+        }
+        throw new Error(`搜索服务返回 ${res.status}`);
       }
 
       const data = await res.json();
+      workerFailed = false;
       renderSearchResults(data);
 
     } catch (err) {
       console.warn('Worker 调用失败:', err);
-      // 即使 Worker 失败，词条卡片仍然可以显示
-      if (lexiconMatches.length === 0) {
-        showError('搜索服务暂时不可用，请稍后重试');
+      workerFailed = true;
+
+      // 把技术性错误转换成用户能理解的提示
+      let friendly = '网页搜索暂时不可用，请稍后重试';
+      if (/Failed to fetch|NetworkError|Load failed/i.test(err.message)) {
+        friendly = '无法连接搜索服务，请检查网络后重试';
+      } else if (/403/.test(err.message)) {
+        friendly = '搜索服务拒绝了本次请求（来源校验或密钥失效）';
+      } else if (/50\d/.test(err.message)) {
+        friendly = '搜索服务暂时故障，请稍后重试';
       }
+
+      // 无论有没有词条命中，都要提示用户"网页搜索"这一块出了问题，
+      // 否则用户会误以为"搜索没有结果"。
+      showError(friendly);
+      if (resultMeta) resultMeta.classList.add('hidden');
     }
   }
 
   // ===== 渲染搜索结果 =====
   function renderSearchResults(data) {
-    if (!data || !data.results || data.results.length === 0) {
-      if (lexiconMatches.length === 0) {
-        resultList.innerHTML = '<li class="result-item"><div class="result-title">未找到结果</div><div class="result-snippet">试试其他关键词吧</div></li>';
-      }
-      return;
-    }
+    const results = (data && Array.isArray(data.results)) ? data.results : [];
+    searchResults = results;
 
-    searchResults = data.results;
-
-    // AI 总结
-    if (data.summary) {
+    // ---- AI 总结（无论有没有结果都要显示）----
+    if (data && data.summary) {
       summaryBox.classList.remove('hidden');
       summaryBody.innerHTML = `<p>${escapeHtml(data.summary).replace(/\n/g, '</p><p>')}</p>`;
-      if (data.engine) {
+      if (summaryEngine && data.summary_by) {
+        const byLabel = {
+          'rule_fallback': '规则兜底',
+          'ai': 'AI 生成',
+          'llm': 'AI 生成'
+        }[data.summary_by] || data.summary_by;
+        summaryEngine.textContent = `来源: ${byLabel}`;
+      } else if (summaryEngine && data.engine) {
         summaryEngine.textContent = `来源: ${data.engine}`;
       }
+    } else if (summaryBox) {
+      summaryBox.classList.add('hidden');
     }
 
-    // 结果统计
-    if (data.total !== undefined) {
+    // ---- 结果统计 ----
+    // 注意：Worker 返回的是 total_estimated / page_size，兼容旧的 total / time
+    const total = (data && (data.total_estimated !== undefined ? data.total_estimated : data.total));
+    if (total !== undefined && total !== null) {
       resultMeta.classList.remove('hidden');
-      resultMeta.textContent = `找到约 ${data.total} 条结果（用时 ${data.time || '?'} 秒）`;
+      const timePart = (data && data.time) ? `（用时 ${data.time} 秒）` : '';
+      resultMeta.textContent = total > 0
+        ? `找到约 ${total} 条结果${timePart}`
+        : '未找到网页结果';
     }
 
-    // 结果列表
-    resultList.innerHTML = searchResults.map(item => `
-      <li class="result-item">
-        <div class="result-title">
-          <a href="${escapeHtml(item.url || '#')}" target="_blank" rel="noopener">${escapeHtml(item.title || '无标题')}</a>
-        </div>
-        ${item.url ? `<div class="result-url">${escapeHtml(item.url)}</div>` : ''}
-        ${item.snippet ? `<div class="result-snippet">${escapeHtml(item.snippet)}</div>` : ''}
-        ${item.source ? `<span class="result-source">${escapeHtml(item.source)}</span>` : ''}
-      </li>
-    `).join('');
+    // ---- 结果列表 ----
+    if (results.length > 0) {
+      resultList.innerHTML = results.map(item => `
+        <li class="result-item">
+          <div class="result-title">
+            <a href="${escapeUrl(item.url)}" target="_blank" rel="noopener noreferrer">${escapeHtml(item.title || '无标题')}</a>
+          </div>
+          ${item.url ? `<div class="result-url">${escapeHtml(item.url)}</div>` : ''}
+          ${item.snippet ? `<div class="result-snippet">${escapeHtml(item.snippet)}</div>` : ''}
+          ${item.source ? `<span class="result-source">${escapeHtml(item.source)}</span>` : ''}
+        </li>
+      `).join('');
+    } else if (lexiconMatches.length === 0) {
+      // 既没有词条也没有网页结果
+      resultList.innerHTML = '<li class="result-item"><div class="result-title">未找到结果</div><div class="result-snippet">试试其他关键词吧</div></li>';
+    } else {
+      // 有词条命中，只是网页结果为空 —— 不显示"未找到"，避免误导
+      resultList.innerHTML = '';
+    }
 
-    // 翻页
-    if (data.hasMore || currentPage > 1) {
+    // ---- 翻页 ----
+    // 兼容 has_more / hasMore
+    const hasMore = !!(data && (data.has_more !== undefined ? data.has_more : data.hasMore));
+    if (hasMore || currentPage > 1) {
       pagination.classList.remove('hidden');
       pageInfo.textContent = `第 ${currentPage} 页`;
       pagePrev.disabled = currentPage <= 1;
-      pageNext.disabled = !data.hasMore;
+      pageNext.disabled = !hasMore;
+    } else {
+      pagination.classList.add('hidden');
     }
   }
 
@@ -340,6 +390,8 @@
     resultList.innerHTML = '';
     searchError.classList.add('hidden');
     pagination.classList.add('hidden');
+    // 重置词条展开状态
+    lexiconExpanded = false;
   }
 
   function showError(msg) {
@@ -351,6 +403,27 @@
     if (!text) return '';
     const map = { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#039;' };
     return String(text).replace(/[&<>"']/g, m => map[m]);
+  }
+
+  // URL 安全：只允许 http/https，防止 javascript: 等协议注入
+  function escapeUrl(url) {
+    if (!url) return '#';
+    const s = String(url).trim();
+    if (/^https?:\/\//i.test(s)) return escapeHtml(s);
+    if (s.startsWith('/') || s.startsWith('./') || s.startsWith('../')) return escapeHtml(s);
+    return '#';
+  }
+
+  // 分类图标
+  const CATEGORY_ICONS = {
+    '文化': '🏛️', '科技': '💡', '游戏': '🎮', '产品': '🚀', '互联网': '🌐',
+    '工作室': '🏢', '社交': '💬', '娱乐': '🎬', '历史': '📜', '地理': '🗺️',
+    '艺术': '🎨', '科学': '🔬', '人物': '👤', '影视': '🎬', '音乐': '🎵',
+    '体育': '⚽', '教育': '📚', '商业': '💼', '生活': '🌱'
+  };
+
+  function categoryIcon(category) {
+    return CATEGORY_ICONS[category] || '📄';
   }
 
   // ===== 翻页事件 =====

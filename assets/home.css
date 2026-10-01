@@ -194,6 +194,54 @@
   color: var(--text-muted);
 }
 
+/* 语录区域改为纵向排列，方便放"换一条"按钮 */
+.quote-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* 换一条语录按钮 */
+.quote-refresh {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  margin-top: 12px;
+  padding: 7px 16px;
+  border-radius: 18px;
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--text-secondary);
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  transition: var(--transition);
+  box-shadow: var(--shadow-sm);
+}
+
+.quote-refresh:hover {
+  color: var(--accent);
+  border-color: var(--accent);
+  transform: translateY(-1px);
+}
+
+.quote-refresh:active {
+  transform: translateY(0);
+}
+
+.quote-refresh svg {
+  width: 13px;
+  height: 13px;
+}
+
+/* 快捷入口空状态 */
+.shortcuts-empty {
+  grid-column: 1 / -1;
+  text-align: center;
+  color: var(--text-muted);
+  font-size: 12px;
+  padding: 12px 0;
+}
+
 /* ===== 底部 ===== */
 .home-footer {
   text-align: center;
@@ -255,8 +303,6 @@
   .shortcuts-grid { grid-template-columns: repeat(4, 1fr); gap: 6px; }
   .shortcut-item { padding: 10px 2px; }
   .shortcut-name { font-size: 10px; }
-  .lang-switch { top: 12px; right: 12px; }
-  .lang-btn { padding: 3px 8px; font-size: 11px; }
 }
 
 /* ===== 横屏适配 ===== */

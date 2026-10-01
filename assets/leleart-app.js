@@ -128,11 +128,15 @@
 
       // 图片
       if (artImage) {
-        if (articleData.thumb) {
-          artImage.innerHTML = `<img src="${escapeHtml(articleData.thumb)}" alt="" loading="lazy" style="width:100%;height:100%;object-fit:cover;">`;
+        const thumbUrl = typeof articleData.thumb === 'string' ? articleData.thumb.trim() : '';
+        if (thumbUrl) {
+          artImage.innerHTML = `<img src="${escapeHtml(thumbUrl)}" alt="${escapeHtml(articleData.title || '')}" loading="lazy" style="width:100%;height:100%;object-fit:cover;">`;
           hasContent = true;
         } else {
-          artImage.style.display = 'none';
+          // 没有缩略图：用分类图标占位，保持视觉一致
+          artImage.classList.add('infobox-image-fallback');
+          artImage.innerHTML = `<span class="infobox-icon">${categoryIcon(articleData.category)}</span>`;
+          hasContent = true;
         }
       }
 
@@ -182,6 +186,18 @@
     if (!text) return '';
     const map = { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#039;' };
     return String(text).replace(/[&<>"']/g, m => map[m]);
+  }
+
+  // 分类图标（无缩略图时占位用）
+  const CATEGORY_ICONS = {
+    '文化': '🏛️', '科技': '💡', '游戏': '🎮', '产品': '🚀', '互联网': '🌐',
+    '工作室': '🏢', '社交': '💬', '娱乐': '🎬', '历史': '📜', '地理': '🗺️',
+    '艺术': '🎨', '科学': '🔬', '人物': '👤', '影视': '🎬', '音乐': '🎵',
+    '体育': '⚽', '教育': '📚', '商业': '💼', '生活': '🌱'
+  };
+
+  function categoryIcon(category) {
+    return CATEGORY_ICONS[category] || '📄';
   }
 
   // ===== 启动 =====

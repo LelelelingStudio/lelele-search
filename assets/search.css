@@ -3,7 +3,7 @@
   position: sticky;
   top: 0;
   z-index: 50;
-  background: rgba(15, 15, 20, 0.95);
+  background: var(--header-bg);
   backdrop-filter: blur(12px);
   border-bottom: 1px solid var(--border);
   padding: 12px 16px;
@@ -67,16 +67,12 @@
 
 .header-search-form { position: relative; }
 
-.lang-select {
-  height: 36px;
-  padding: 0 8px;
-  background: var(--bg-secondary);
-  border: 1px solid var(--border);
-  border-radius: 8px;
-  color: var(--text-secondary);
-  font-size: 13px;
-  cursor: pointer;
+/* 顶栏内的主题按钮改为普通流式定位，避免与 fixed 定位冲突 */
+.search-header .theme-toggle {
+  position: static;
   flex-shrink: 0;
+  width: 36px;
+  height: 36px;
 }
 
 /* ===== 主内容区 ===== */
@@ -168,12 +164,25 @@
   background: var(--bg-secondary);
   flex-shrink: 0;
   overflow: hidden;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .lexicon-thumb img {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  position: absolute;
+  inset: 0;
+}
+
+/* 无缩略图时的分类图标占位 */
+.lexicon-thumb-fallback {
+  font-size: 30px;
+  line-height: 1;
+  opacity: 0.9;
 }
 
 .lexicon-content {

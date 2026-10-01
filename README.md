@@ -21,10 +21,10 @@
 | 🤖 **AI 总结** | 搜索结果最上方展示 AI 生成的摘要总结，快速获取要点 |
 | 📖 **词条详情页** | 点击词条卡片跳转独立详情页，信息栏 + 正文段落完整呈现 |
 | 🎯 **智能排序** | 去重 + 按相关度排列，减少翻页 |
-| 🌐 **多语言** | 支持中 / 英 / 日 / 法 |
-| 💬 **每日语录** | 首页每日励志语录，给你一点动力 |
+| 🎨 **浅色 / 深色主题** | 默认浅色，右上角一键切换，选择自动记忆 |
+| 💬 **每日语录** | 首页随机展示语录（内置 983 条），支持"换一条" |
 | 📱 **移动端适配** | 响应式布局，横竖屏自动适配 |
-| 🎨 **暗色系工作室风格** | 深色背景 + 紫色强调色，长时间使用不累眼 |
+| 🎨 **工作室配色** | 紫色强调色 + 圆角卡片，浅色/深色两套主题 |
 
 ### 访问地址
 
@@ -67,7 +67,7 @@ lelele-search/
 
 ├── assets/
 
-│   ├── common.css          # 全局公共样式
+│   ├── common.css          # 全局公共样式（含浅色/深色主题变量）
 
 │   ├── home.css            # 首页样式
 
@@ -75,11 +75,15 @@ lelele-search/
 
 │   ├── leleart.css         # 词条详情页样式
 
+│   ├── theme.js            # 主题切换（默认浅色，localStorage 记忆）
+
 │   ├── app.js              # 首页逻辑
 
 │   ├── search-app.js       # 结果页逻辑（Worker调用 + 词条匹配）
 
-│   └── leleart-app.js      # 词条详情页逻辑
+│   ├── leleart-app.js      # 词条详情页逻辑
+
+│   └── quotes.json         # 语录数据（983 条，同源静态文件）
 
 ├── searchart/
 
@@ -119,9 +123,14 @@ python -m http.server 8000
 | 配置 | 位置 | 说明 |
 |------|------|------|
 | `WORKER_URL` | `assets/search-app.js` | Cloudflare Worker 地址 |
-| `x-api-key` | `assets/search-app.js` 第 144 行 | Worker 鉴权密钥（如不需要可删除 headers） |
-| `INDEX_URL` | `assets/search-app.js` | 词条索引文件路径 |
-| `QUOTES_URL` | `assets/app.js` | 每日语录数据源 |
+| `WORKER_API_KEY` | `assets/search-app.js` | Worker 鉴权密钥（如不需要可删除 headers） |
+| `INDEX_URL` | `assets/search-app.js` / `assets/app.js` | 词条索引文件路径 |
+| `QUOTES_URL` | `assets/app.js` | 语录数据源（已本地化为 `assets/quotes.json`） |
+| 主题 | `assets/theme.js` | 默认浅色，右上角切换；存储键 `lll_theme` |
+
+> ⚠️ **安全提示**：前端代码里的 `WORKER_API_KEY` 会随公开仓库一起暴露，
+> 任何人都能在浏览器里看到。它只能挡住随手盗用，真正的防护应依赖
+> Worker 端的 **Origin / Referer 白名单 + 频率限制**，并定期轮换密钥。
 
 ## 词条 JSON 格式
 

@@ -5,6 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
   <title>词条详情 - 了了了搜</title>
   <link rel="icon" type="image/png" href="https://search.leleleling.site/icon.png">
+  <!-- 尽早应用主题，避免切换时闪烁 -->
+  <script src="assets/theme.js"></script>
   <link rel="stylesheet" href="assets/common.css">
   <link rel="stylesheet" href="assets/leleart.css">
 </head>
@@ -13,7 +15,10 @@
   <header class="leleart-header">
     <div class="header-inner">
       <a href="index.html" class="header-logo">了了了搜</a>
-      <a href="search.html" class="header-back" id="backToSearch">← 返回搜索</a>
+      <div class="header-actions">
+        <a href="search.html" class="header-back" id="backToSearch">← 返回搜索</a>
+        <button class="theme-toggle" id="themeToggle" type="button"></button>
+      </div>
     </div>
   </header>
 

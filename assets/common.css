@@ -1,5 +1,32 @@
 /* ===== 全局重置 & 基础变量 ===== */
-:root {
+
+/* ---------- 浅色主题（默认） ---------- */
+:root,
+:root[data-theme="light"] {
+  --bg-primary: #f7f7fb;
+  --bg-secondary: #ffffff;
+  --bg-card: #ffffff;
+  --bg-hover: #f0f0f7;
+  --text-primary: #1a1a24;
+  --text-secondary: #5a5a72;
+  --text-muted: #8e8ea8;
+  --accent: #6d4aff;
+  --accent-hover: #5a37f0;
+  --accent-glow: rgba(109, 74, 255, 0.14);
+  --border: #e4e4ef;
+  --border-light: #d2d2e2;
+  --radius: 12px;
+  --radius-sm: 8px;
+  --shadow: 0 4px 24px rgba(20, 20, 50, 0.08);
+  --shadow-sm: 0 1px 3px rgba(20, 20, 50, 0.06);
+  --header-bg: rgba(255, 255, 255, 0.9);
+  --transition: all 0.2s ease;
+  --header-h: 56px;
+  color-scheme: light;
+}
+
+/* ---------- 深色主题 ---------- */
+:root[data-theme="dark"] {
   --bg-primary: #0f0f14;
   --bg-secondary: #1a1a24;
   --bg-card: #22222f;
@@ -12,11 +39,10 @@
   --accent-glow: rgba(124, 92, 255, 0.25);
   --border: #2e2e42;
   --border-light: #3a3a52;
-  --radius: 12px;
-  --radius-sm: 8px;
   --shadow: 0 4px 24px rgba(0, 0, 0, 0.4);
-  --transition: all 0.2s ease;
-  --header-h: 56px;
+  --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.3);
+  --header-bg: rgba(15, 15, 20, 0.92);
+  color-scheme: dark;
 }
 
 * {
@@ -28,6 +54,14 @@
 html, body {
   height: 100%;
   overflow-x: hidden;
+}
+
+/* 主题切换时平滑过渡（避免首屏闪烁） */
+html.theme-ready body,
+html.theme-ready .card,
+html.theme-ready .shortcut-item,
+html.theme-ready .search-box {
+  transition: background-color 0.25s ease, color 0.25s ease, border-color 0.25s ease;
 }
 
 body {
@@ -70,38 +104,54 @@ img {
   display: block;
 }
 
-/* ===== 语言切换 ===== */
-.lang-switch {
+/* ===== 右上角控制区（主题切换） ===== */
+.top-controls {
   position: fixed;
   top: 16px;
   right: 16px;
   display: flex;
-  gap: 4px;
+  align-items: center;
+  gap: 8px;
   z-index: 100;
+}
+
+.theme-toggle {
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
   background: var(--bg-secondary);
   border: 1px solid var(--border);
-  border-radius: 20px;
-  padding: 4px;
-}
-
-.lang-btn {
-  padding: 4px 10px;
-  border-radius: 16px;
-  font-size: 12px;
-  font-weight: 600;
-  color: var(--text-muted);
-  transition: var(--transition);
-}
-
-.lang-btn.active {
-  background: var(--accent);
-  color: #fff;
-}
-
-.lang-btn:hover:not(.active) {
   color: var(--text-secondary);
-  background: var(--bg-hover);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: var(--transition);
+  box-shadow: var(--shadow-sm);
 }
+
+.theme-toggle:hover {
+  color: var(--accent);
+  border-color: var(--accent);
+  background: var(--bg-hover);
+  transform: translateY(-1px);
+}
+
+.theme-toggle:active {
+  transform: translateY(0);
+}
+
+.theme-toggle svg {
+  width: 18px;
+  height: 18px;
+  display: block;
+}
+
+/* 图标显示逻辑：浅色主题显示月亮（点击进深色），深色主题显示太阳 */
+.theme-toggle .icon-moon { display: block; }
+.theme-toggle .icon-sun { display: none; }
+
+:root[data-theme="dark"] .theme-toggle .icon-moon { display: none; }
+:root[data-theme="dark"] .theme-toggle .icon-sun { display: block; }
 
 /* ===== 通用卡片 ===== */
 .card {
@@ -110,6 +160,7 @@ img {
   border-radius: var(--radius);
   padding: 16px;
   transition: var(--transition);
+  box-shadow: var(--shadow-sm);
 }
 
 .card:hover {
@@ -159,6 +210,7 @@ img {
 }
 
 /* ===== 工具类 ===== */
+.hidden { display: none !important; }
 .text-muted { color: var(--text-muted); }
 .text-secondary { color: var(--text-secondary); }
 .text-accent { color: var(--accent); }
