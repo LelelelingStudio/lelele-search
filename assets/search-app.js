@@ -318,10 +318,10 @@
       summaryBody.innerHTML = `<p>${escapeHtml(data.summary).replace(/\n/g, '</p><p>')}</p>`;
       if (summaryEngine) {
         const byLabel = {
-          'rule_fallback': '基础总结',
-          'agnes-2.5-flash': 'Agnes',
-          'llama-3.1-8b-instant': 'Groq',
-          'deepseek-chat': 'DeepSeek'
+          'rule_fallback': '了了了AI · 小了',
+          'agnes-2.5-flash': '了了了AI · 小了',
+          'llama-3.1-8b-instant': '了了了AI · 小了',
+          'deepseek-chat': '了了了AI · 小了'
         }[data.summary_by] || data.summary_by || '';
         summaryEngine.textContent = byLabel ? `来自 ${byLabel}` : '';
       }
